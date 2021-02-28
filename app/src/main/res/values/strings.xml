@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Final qualifying work</string>
+    <string name="login_page_login">логин</string>
+    <string name="login_page_password">пароль</string>
+    <string name="login_page_button_login">ВОЙТИ</string>
+    <string name="login_page_button_registration">ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="login_page_have_no_account">нет аккаунта?</string>
+    <string name="registration_page_name">имя</string>
+    <string name="registration_page_last_name">фамилия</string>
+    <string name="registration_page_mail">почта</string>
+    <string name="registration_page_create_password">придумайте пароль</string>
+    <string name="registration_page_button_registration">ЗАРЕГИСТРИРОВАТЬСЯ</string>
 </resources>
