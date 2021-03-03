@@ -1,29 +1,24 @@
 package com.gervant08.finalqualifyingwork.ui.authentication.login
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
-import com.gervant08.finalqualifyingwork.model.repository.AuthRepository
-import com.google.firebase.auth.FirebaseUser
+import androidx.lifecycle.ViewModel
+import com.gervant08.finalqualifyingwork.model.data.User
+import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 
+class LoginViewModel @ViewModelInject constructor(
+    private val dataStoreManager: DataStoreManager
+) : ViewModel() {
+    private val loggedUserLiveData: MutableLiveData<User> = MutableLiveData()
 
-class LoginViewModel(application: Application) : AndroidViewModel(application) {
-    private val authRepository: AuthRepository = AuthRepository(application)
-    private val userLiveData: MutableLiveData<FirebaseUser> = authRepository.getUserLiveData()
-
-    fun login(email: String, password: String){
+    fun login(email: String, password: String) {
+        val user: User = dataStoreManager.readEmailAndPassword()
+        if (email == user.email && password == user.password) {
+            loggedUserLiveData.postValue(User(email, password))
+        }
 
     }
 
-    fun registration(email: String, password: String){
-
-    }
-
-    fun logOut(){
-        authRepository.lodOut()
-    }
-
-
-    fun getUserLiveData(): MutableLiveData<FirebaseUser> = userLiveData
+    fun getLoggedUserLiveData(): MutableLiveData<User> = loggedUserLiveData
 
 }

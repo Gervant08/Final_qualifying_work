@@ -9,11 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 
 
-class AuthFragment : Fragment() {
+class AuthFragment(dataStoreManager: DataStoreManager) : Fragment() {
 
-    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory() }
+    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(dataStoreManager) }
     private lateinit var authViewPager: ViewPager2
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

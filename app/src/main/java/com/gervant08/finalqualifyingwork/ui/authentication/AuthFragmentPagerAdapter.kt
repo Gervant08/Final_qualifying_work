@@ -6,10 +6,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class AuthFragmentPagerAdapter(
-        fragmentsList: ArrayList<Fragment>,
-        fragmentManager: FragmentManager,
-        lifecycle: Lifecycle
-): FragmentStateAdapter(fragmentManager, lifecycle) {
+    fragmentsList: ArrayList<Fragment>,
+    fragmentManager: FragmentManager,
+    lifecycle: Lifecycle
+) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
     private val authFragmentsList = fragmentsList
 
@@ -17,8 +17,5 @@ class AuthFragmentPagerAdapter(
         return authFragmentsList.size
     }
 
-    override fun createFragment(position: Int): Fragment =
-            authFragmentsList[position]
-
-
+    override fun createFragment(position: Int): Fragment = authFragmentsList[position]
 }

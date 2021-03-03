@@ -5,59 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:hint="Floating Hint Enabled Default" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/zdfjgbnslbjn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:hint="Floating Hint Enabled Default" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    android:background="@drawable/Background_L">-->>
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="200dp"
+        android:id="@+id/login_button"
+        android:layout_width="286dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="188dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="ВОЙТИ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/go_to_registration"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="286dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="34dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="ЗАРЕГИСТРИРОВАТЬСЯ"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
-        app:layout_constraintStart_toStartOf="@+id/materialButton"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_login"
+        android:layout_width="267dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="323dp"
+        android:hint="логин"
+        android:paddingLeft="14dp"
+        android:paddingBottom="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_pass"
+        android:layout_width="267dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="13dp"
+        android:hint="пароль"
+        android:paddingLeft="14dp"
+        android:paddingBottom="14dp"
+        app:layout_constraintStart_toStartOf="@+id/input_login"
+        app:layout_constraintTop_toBottomOf="@+id/input_login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
