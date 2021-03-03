@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_login"
+        android:id="@+id/login_input_login"
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginBottom="447dp"
@@ -24,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_pass"
+        android:id="@+id/login_input_password"
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
@@ -39,10 +40,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_login" />
+        app:layout_constraintTop_toBottomOf="@+id/login_input_login" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/login_button_login"
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginBottom="312dp"
@@ -60,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/go_to_registration"
+        android:id="@+id/login_button_registration"
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginTop="34dp"
@@ -75,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button_login" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/have_no_acc"
@@ -87,7 +88,7 @@
         android:textSize="11dp"
         android:text="нет аккаунта?"
         android:textColor="@color/chocolate_pale_57"
-        app:layout_constraintBottom_toTopOf="@+id/go_to_registration"
-        app:layout_constraintEnd_toEndOf="@+id/go_to_registration" />
+        app:layout_constraintBottom_toTopOf="@+id/login_button_registration"
+        app:layout_constraintEnd_toEndOf="@+id/login_button_registration" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

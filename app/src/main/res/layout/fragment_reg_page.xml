@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/input_name" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_mail"
+        android:id="@+id/registration_input_mail"
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/input_lastname" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_pass"
+        android:id="@+id/registration_input_password"
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
@@ -72,10 +72,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_input_mail" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/go_to_registration"
+        android:id="@+id/registration_button_registration"
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginBottom="242dp"

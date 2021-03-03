@@ -1,12 +1,11 @@
 package com.gervant08.finalqualifyingwork.ui.authentication.login
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gervant08.finalqualifyingwork.model.data.User
 import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 
-class LoginViewModel @ViewModelInject constructor(
+class LoginViewModel (
     private val dataStoreManager: DataStoreManager
 ) : ViewModel() {
     private val loggedUserLiveData: MutableLiveData<User> = MutableLiveData()

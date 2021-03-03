@@ -34,9 +34,9 @@ class RegistrationFragment(
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        registrationButton = view.findViewById(R.id.registration_button)
+        registrationButton = view.findViewById(R.id.registration_button_registration)
         emailEditText = view.findViewById(R.id.registration_input_mail)
-        passwordEditText = view.findViewById(R.id.registration_input_pass)
+        passwordEditText = view.findViewById(R.id.registration_input_password)
 
         registrationButton.setOnClickListener {
             coroutineScope.launch {

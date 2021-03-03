@@ -36,10 +36,10 @@ class LoginFragment(
         savedInstanceState: Bundle?
     ) {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewpager)
-        registrationButton = view.findViewById(R.id.go_to_registration)
-        loginButton = view.findViewById(R.id.login_button)
-        emailEditText = view.findViewById(R.id.input_login)
-        passwordEditText = view.findViewById(R.id.input_pass)
+        registrationButton = view.findViewById(R.id.login_button_registration)
+        loginButton = view.findViewById(R.id.login_button_login)
+        emailEditText = view.findViewById(R.id.login_input_login)
+        passwordEditText = view.findViewById(R.id.login_input_password)
 
         registrationButton.setOnClickListener {
             viewPager?.currentItem = 1
