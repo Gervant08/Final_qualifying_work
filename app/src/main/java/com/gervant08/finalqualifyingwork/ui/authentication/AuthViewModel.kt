@@ -6,8 +6,11 @@ import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 import com.gervant08.finalqualifyingwork.ui.authentication.login.LoginFragment
 import com.gervant08.finalqualifyingwork.ui.authentication.registration.RegistrationFragment
 
-
 class AuthViewModel(private val dataStoreManager: DataStoreManager) : ViewModel() {
+
+    fun logIn(){
+
+    }
 
     fun initFragmentList(): ArrayList<Fragment> =
         arrayListOf(

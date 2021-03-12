@@ -25,11 +25,6 @@ class LoginFragment(
         LoginViewModelFactory(dataStoreManager)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        loginViewModel.getLoggedUserLiveData().observe(this, this::onUsersChanged)
-    }
 
     override fun onViewCreated(
         view: View,

@@ -27,12 +27,6 @@ class RegistrationFragment(
         RegistrationViewModelFactory(dataStoreManager)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        registrationViewModel.getRegisteredUserLiveData().observe(this, this::onUsersChanged)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         registrationButton = view.findViewById(R.id.registration_button_registration)
         emailEditText = view.findViewById(R.id.registration_input_mail)
