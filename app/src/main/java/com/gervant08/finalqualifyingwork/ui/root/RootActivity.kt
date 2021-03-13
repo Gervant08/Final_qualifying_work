@@ -12,6 +12,7 @@ class RootActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val dataStoreManager = DataStoreManager(MyApp.applicationContext)
         val transaction = supportFragmentManager.beginTransaction()
                 .replace(R.id.container, AuthFragment(dataStoreManager)).commit()
     }
