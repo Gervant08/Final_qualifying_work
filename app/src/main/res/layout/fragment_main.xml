@@ -32,4 +32,10 @@
         app:itemTextColor="@drawable/nav_selector"
         app:menu="@menu/nav_menu" />
 
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@id/bottom_navigation"
+        android:background="@drawable/nav_shadow"/>
+
 </RelativeLayout>
