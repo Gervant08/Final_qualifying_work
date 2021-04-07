@@ -13,8 +13,9 @@ class RootActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val dataStoreManager = DataStoreManager(MyApp.applicationContext)
-        val transaction = supportFragmentManager.beginTransaction()
-                .replace(R.id.container, AuthFragment(dataStoreManager)).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, AuthFragment(dataStoreManager))
+            .commit()
 
 
     }
