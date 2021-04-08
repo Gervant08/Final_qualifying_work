@@ -10,6 +10,7 @@ import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 import com.gervant08.finalqualifyingwork.model.data.User
 import com.gervant08.finalqualifyingwork.model.data.UserLiveData
+import com.gervant08.finalqualifyingwork.ui.main.MainFragment
 
 
 class AuthFragment(dataStoreManager: DataStoreManager) : Fragment(R.layout.fragment_auth) {
@@ -38,6 +39,9 @@ class AuthFragment(dataStoreManager: DataStoreManager) : Fragment(R.layout.fragm
 
     private fun onUserLogged(user: User){
         authViewModel.logIn()
+        requireFragmentManager().beginTransaction()
+            .replace(R.id.container, MainFragment())
+            .commit()
     }
 
 

@@ -1,5 +1,7 @@
 package com.gervant08.finalqualifyingwork.ui.main
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel: ViewModel() {
 
 }

@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav">
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:id="@+id/nav">
+
+        <fragment
+            android:id="@+id/auth_fragment"
+            android:name="com.gervant08.finalqualifyingwork.ui.authentication.AuthFragment"
+            tools:layout="@layout/fragment_auth">
+
+            <action
+                android:id="@+id/action_auth_fragment_to_main_fragment"
+                app:destination="@id/main_fragment" />
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/main_fragment"
+            android:name="com.gervant08.finalqualifyingwork.ui.main.MainFragment"
+            tools:layout="@layout/fragment_main">
+
+            <action
+                android:id="@+id/action_main_fragment_to_profile_fragment"
+                app:destination="@id/profile_fragment" />
+            <action
+                android:id="@+id/action_main_fragment_to_basket_fragment"
+                app:destination="@id/basket_fragment" />
+            <action
+                android:id="@+id/action_main_fragment_to_home_fragment"
+                app:destination="@id/home_fragment" />
+        </fragment>
 
 </navigation>

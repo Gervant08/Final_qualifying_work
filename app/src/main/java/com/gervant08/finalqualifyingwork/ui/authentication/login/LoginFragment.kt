@@ -53,8 +53,4 @@ class LoginFragment(
             loginViewModel.login(email, password)
 
     }
-
-    private fun onUsersChanged(user: User) {
-        Toast.makeText(context, "${user.email}", Toast.LENGTH_SHORT).show()
-    }
 }

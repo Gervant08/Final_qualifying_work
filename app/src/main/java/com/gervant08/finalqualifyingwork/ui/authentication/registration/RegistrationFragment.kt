@@ -46,16 +46,5 @@ class RegistrationFragment(
 
         if (email.isNotEmpty() && password.isNotEmpty())
             registrationViewModel.registration(email, password)
-        else {
-            Toast.makeText(
-                context,
-                "Email Address and Password Must Be Entered",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-    }
-
-    private fun onUsersChanged(user: User) {
-        Toast.makeText(context, "Reg", Toast.LENGTH_SHORT).show()
     }
 }
