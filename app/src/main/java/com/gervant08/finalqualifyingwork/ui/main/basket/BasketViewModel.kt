@@ -1,4 +1,6 @@
 package com.gervant08.finalqualifyingwork.ui.main.basket
 
-class BasketViewModel {
+import androidx.lifecycle.ViewModel
+
+class BasketViewModel: ViewModel() {
 }

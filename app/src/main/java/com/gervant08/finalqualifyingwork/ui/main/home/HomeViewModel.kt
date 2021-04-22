@@ -1,4 +1,6 @@
 package com.gervant08.finalqualifyingwork.ui.main.home
 
-class HomeViewModel {
+import androidx.lifecycle.ViewModel
+
+class HomeViewModel: ViewModel() {
 }

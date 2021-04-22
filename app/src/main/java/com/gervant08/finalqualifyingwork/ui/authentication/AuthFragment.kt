@@ -8,21 +8,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
-import com.gervant08.finalqualifyingwork.model.data.User
-import com.gervant08.finalqualifyingwork.model.data.UserLiveData
-import com.gervant08.finalqualifyingwork.ui.main.MainFragment
 
-
-class AuthFragment(dataStoreManager: DataStoreManager) : Fragment(R.layout.fragment_auth) {
-
-    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(dataStoreManager) }
+class AuthFragment : Fragment(R.layout.fragment_auth) {
+    private val authFragmentArgs =  AuthFragmentArgs.fromBundle(requireArguments()).dataStoreManager as DataStoreManager
+    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(authFragmentArgs) }
     private lateinit var authViewPager: ViewPager2
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        UserLiveData.loggedUserLiveData.observe(this, this::onUserLogged)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,13 +26,6 @@ class AuthFragment(dataStoreManager: DataStoreManager) : Fragment(R.layout.fragm
             requireActivity().supportFragmentManager,
             lifecycle
     )
-
-    private fun onUserLogged(user: User){
-        authViewModel.logIn()
-        requireFragmentManager().beginTransaction()
-            .replace(R.id.container, MainFragment())
-            .commit()
-    }
 
 
 }

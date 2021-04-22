@@ -1,4 +1,6 @@
 package com.gervant08.finalqualifyingwork.ui.main.profile
 
-class ProfileViewModel {
+import androidx.lifecycle.ViewModel
+
+class ProfileViewModel: ViewModel() {
 }
