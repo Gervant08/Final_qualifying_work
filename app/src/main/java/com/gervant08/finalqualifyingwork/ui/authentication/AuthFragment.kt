@@ -10,8 +10,7 @@ import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
-    private val authFragmentArgs =  AuthFragmentArgs.fromBundle(requireArguments()).dataStoreManager as DataStoreManager
-    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(authFragmentArgs) }
+    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(DataStoreManager.getInstance(requireContext())) }
     private lateinit var authViewPager: ViewPager2
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
