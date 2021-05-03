@@ -7,7 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
     private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(DataStoreManager.getInstance(requireContext())) }

@@ -2,7 +2,7 @@ package com.gervant08.finalqualifyingwork.ui.authentication.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
 
 class LoginViewModelFactory(private val dataStoreManager: DataStoreManager) : ViewModelProvider.Factory {
 

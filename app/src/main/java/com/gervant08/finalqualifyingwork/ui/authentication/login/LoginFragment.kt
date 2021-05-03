@@ -3,16 +3,12 @@ package com.gervant08.finalqualifyingwork.ui.authentication.login
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.User
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.launch
 
 class LoginFragment(
     dataStoreManager: DataStoreManager

@@ -2,7 +2,7 @@ package com.gervant08.finalqualifyingwork.ui.authentication
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
 import com.gervant08.finalqualifyingwork.ui.authentication.login.LoginFragment
 import com.gervant08.finalqualifyingwork.ui.authentication.registration.RegistrationFragment
 

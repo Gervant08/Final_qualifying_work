@@ -2,7 +2,7 @@ package com.gervant08.finalqualifyingwork.ui.authentication.registration
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
 
 class RegistrationViewModelFactory(private val dataStoreManager: DataStoreManager) : ViewModelProvider.Factory {
 

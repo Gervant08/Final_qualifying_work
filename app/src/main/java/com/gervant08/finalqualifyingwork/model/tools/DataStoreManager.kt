@@ -1,4 +1,4 @@
-package com.gervant08.finalqualifyingwork.model.data
+package com.gervant08.finalqualifyingwork.model.tools
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -9,9 +9,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 class DataStoreManager(private val context: Context) {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_data_store")
@@ -19,8 +17,17 @@ class DataStoreManager(private val context: Context) {
 
     companion object {
         private var INSTANCE: DataStoreManager? = null
-        fun getInstance(context: Context): DataStoreManager =
-            INSTANCE ?: DataStoreManager(context)
+
+        fun getInstance(context: Context): DataStoreManager {
+            return if (INSTANCE == null){
+                INSTANCE = DataStoreManager(context)
+                INSTANCE!!
+            } else{
+                INSTANCE!!
+            }
+
+        }
+
 
         val FIELD_PASSWORD = stringPreferencesKey("password")
         val FIELD_EMAIL = stringPreferencesKey("email")

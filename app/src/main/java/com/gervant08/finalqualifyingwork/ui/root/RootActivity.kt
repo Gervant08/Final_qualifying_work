@@ -5,26 +5,31 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.app.MyApp
-import com.gervant08.finalqualifyingwork.model.data.DataStoreManager
-import com.gervant08.finalqualifyingwork.model.data.User
-import com.gervant08.finalqualifyingwork.model.data.UserLiveData
+import com.gervant08.finalqualifyingwork.model.data.*
+import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 
 class RootActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private val dataStoreManager = DataStoreManager.getInstance(MyApp.applicationContext)
+    private val jsonMenuParser = JsonMenuParser.getInstance(MyApp.applicationContext)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.app_nav_host) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.app_nav_host) as NavHostFragment
         UserLiveData.loggedUserLiveData.observe(this, this::goToMainScreen)
+
     }
 
-    private fun goToMainScreen(user: User){
+    private fun goToMainScreen(user: User) {
         navigateTo(R.id.main_fragment)
     }
 
-    private fun navigateTo(fragmentId: Int){
+    private fun navigateTo(fragmentId: Int) {
         navHostFragment.navController.navigate(fragmentId)
     }
+
+
 }
