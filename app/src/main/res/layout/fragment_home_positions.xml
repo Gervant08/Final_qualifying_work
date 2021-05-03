@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/pattern_menu"
+        tools:listitem="@layout/pattern_positions"
         />
 
 </FrameLayout>
