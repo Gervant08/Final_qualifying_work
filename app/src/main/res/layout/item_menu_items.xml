@@ -19,7 +19,7 @@
         android:scaleType="fitCenter"
 
 
-        tools:src='@drawable/Meat_plate_image2' />
+        tools:src='@drawable/image_item_meat_plate' />
     <TextView
         android:id="@+id/text_menu_pos"
         android:layout_width="match_parent"
