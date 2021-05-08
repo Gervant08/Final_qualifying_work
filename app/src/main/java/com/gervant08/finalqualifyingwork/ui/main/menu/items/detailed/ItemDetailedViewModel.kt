@@ -1,4 +1,7 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu.items.detailed
 
-class ItemDetailedViewModel {
+import androidx.lifecycle.ViewModel
+
+class ItemDetailedViewModel: ViewModel() {
+
 }

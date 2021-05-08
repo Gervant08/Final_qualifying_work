@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 import com.gervant08.finalqualifyingwork.ui.authentication.AuthViewModel
 
-class ItemsViewModelFactory (private val jsonMenuParser: JsonMenuParser, private val categoryName: String) : ViewModelProvider.Factory {
+class ItemsViewModelFactory (private val jsonMenuParser: JsonMenuParser, private val categoryName: String = "") : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T = when (modelClass) {

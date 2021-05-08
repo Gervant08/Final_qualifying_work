@@ -7,11 +7,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.tools.DataStoreManager
+import com.gervant08.finalqualifyingwork.model.tools.UserPreferences
 import com.google.android.material.textfield.TextInputEditText
 
 class LoginFragment(
-    dataStoreManager: DataStoreManager
+    dataStoreManager: UserPreferences
 ) : Fragment(R.layout.fragment_login_page) {
 
     private lateinit var registrationButton: Button
