@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
+
+    <ImageView
+        android:id="@+id/menuItemImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src='@drawable/image_item_cold_dish_meat_plate' />
+
+    <TextView
+        android:id="@+id/menuItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="clip_vertical|center_horizontal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menuItemImage"
+        tools:text="Мясная закуска" />
+
+    <TextView
+        android:id="@+id/menuItemPrice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="bottom|start"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/menuItemImage"
+        app:layout_constraintTop_toTopOf="@+id/menuItemImage"
+        tools:text="Цена: 350 руб. Вес: 150/80 гр. " />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.gervant08.finalqualifyingwork.model.tools
 import android.content.Context
 import com.gervant08.finalqualifyingwork.model.data.MenuCategory
 import com.gervant08.finalqualifyingwork.model.data.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.MenuLists
 import org.json.JSONObject
 import java.io.IOException
 
@@ -11,11 +12,11 @@ class JsonMenuParser(private val context: Context) {
     companion object {
         private var INSTANCE: JsonMenuParser? = null
         fun getInstance(context: Context): JsonMenuParser {
-            return if (INSTANCE == null){
+            return if (INSTANCE == null) {
                 INSTANCE = JsonMenuParser(context)
                 INSTANCE!!
-            } else{
-               INSTANCE!!
+            } else {
+                INSTANCE!!
             }
 
         }
@@ -32,7 +33,12 @@ class JsonMenuParser(private val context: Context) {
         JSONObject(getJsonMenuFromAsset())
             .keys()
             .forEach {
-                menuCategoriesArray.add(MenuCategory(it))
+                menuCategoriesArray.add(
+                    MenuCategory(
+                        it,
+                        MenuLists.menuCategoriesImagesHashMap[it] ?: 0
+                    )
+                )
             }
 
         return menuCategoriesArray
@@ -49,7 +55,8 @@ class JsonMenuParser(private val context: Context) {
                     jsonObject.getString(ITEM_TITLE),
                     jsonObject.getString(ITEM_DESCRIPTION),
                     jsonObject.getString(ITEM_PRICE),
-                    jsonObject.getString(ITEM_WEIGHT)
+                    jsonObject.getString(ITEM_WEIGHT),
+                    MenuLists.menuItemsImagesHashMap[jsonObject.getString(ITEM_TITLE)] ?: 0
                 )
             )
         }

@@ -9,7 +9,7 @@
     <fragment
         android:id = "@+id/home_fragment"
         android:name = "com.gervant08.finalqualifyingwork.ui.main.menu.MenuFragment"
-        tools:layout = "@layout/fragment_home">
+        tools:layout = "@layout/fragment_menu">
 
 
         <action
@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_home_fragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
     </fragment>
 
     <fragment
@@ -46,6 +49,25 @@
         <action
             android:id="@+id/action_profile_fragment_to_home_fragment2"
             app:destination="@id/home_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.gervant08.finalqualifyingwork.ui.main.menu.items.ItemsFragment"
+        android:label="ItemsFragment" >
+        <action
+            android:id="@+id/action_itemsFragment_to_itemDetailedFragment"
+            app:destination="@id/itemDetailedFragment" />
+        <action
+            android:id="@+id/action_itemsFragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailedFragment"
+        android:name="com.gervant08.finalqualifyingwork.ui.main.menu.items.detailed.ItemDetailedFragment"
+        android:label="ItemDetailedFragment" >
+        <action
+            android:id="@+id/action_itemDetailedFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
     </fragment>
 
 </navigation>

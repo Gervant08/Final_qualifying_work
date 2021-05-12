@@ -7,19 +7,29 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.MenuCategory
+import com.gervant08.finalqualifyingwork.model.data.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var mainBottomNavigationView: BottomNavigationView
     private val mainViewModel: MainViewModel by viewModels()
+    private lateinit var navHostFragment: NavHostFragment
     companion object{
         const val ITEM_HOME = "Home"
         const val ITEM_BASKET = "Basket"
         const val ITEM_PROFILE = "Profile"
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        NavigateLiveData.selectedCategoryLiveData.observe(this, this::onCategorySelected)
+        NavigateLiveData.selectedMenuItemLiveData.observe(this, this::onMenuItemSelected)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
+        navHostFragment = childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
         mainBottomNavigationView = view.findViewById(R.id.main_bottom_navigation)
         setUpBottomNavigation(navHostFragment)
     }
@@ -37,4 +47,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
         }
     }
+
+     private fun onCategorySelected(menuCategory: MenuCategory){
+        navHostFragment.navController.navigate(R.id.itemsFragment)
+    }
+
+    private fun onMenuItemSelected(menuItem: MenuItem){
+        navHostFragment.navController.navigate(R.id.itemDetailedFragment)
+    }
+
+
 }

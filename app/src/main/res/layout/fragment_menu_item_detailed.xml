@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/itemDetailedImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_item_orange_egg_nog_4" />
+
+    <TextView
+        android:id="@+id/itemDetailedTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/chocolate"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/itemDetailedImage"
+        tools:text="Мясная закуска" />
+
+    <TextView
+        android:id="@+id/itemDetailedPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemDetailedTitle"
+        tools:text="Цена: 350 руб. " />
+
+    <TextView
+        android:id="@+id/itemDetailedWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemDetailedPrice"
+        app:layout_constraintTop_toTopOf="@+id/itemDetailedPrice"
+        tools:text="Вес: 150/80 гр." />
+
+    <TextView
+        android:id="@+id/itemDetailedDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/itemDetailedPrice"
+        tools:text="Состав: Колбаса с/к и с/в, карбонад в/к, говядина в/к, карпаччо из курицы.  " />
+    <Button
+        android:id="@+id/itemDetailedAddButton"
+        android:layout_width="286dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_selector"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Добавить в корзину"
+        android:textColor="@color/chocolate"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

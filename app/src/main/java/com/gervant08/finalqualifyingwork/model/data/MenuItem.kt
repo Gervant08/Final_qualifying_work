@@ -5,4 +5,4 @@ data class MenuItem(
     val description: String,
     val price: String,
     val weight: String,
-    val imageResource: Int = 1)
+    val imageResource: Int)

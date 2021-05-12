@@ -19,7 +19,7 @@ class RootActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.app_nav_host) as NavHostFragment
-        UserLiveData.loggedUserLiveData.observe(this, this::goToMainScreen)
+        NavigateLiveData.loggedUserLiveData.observe(this, this::goToMainScreen)
 
     }
 

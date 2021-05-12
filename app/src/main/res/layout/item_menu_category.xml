@@ -11,13 +11,13 @@
 
 
     <ImageView
+        android:id="@+id/category_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src='@drawable/image_category_meat_dish'
+        tools:src='@drawable/image_category_meat_dishes'/>
 
-        />
     <TextView
-        android:id="@+id/text_menu_cat"
+        android:id="@+id/category_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -27,7 +27,6 @@
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="parent"
-        tools:text="Мясные\nблюда"
-        />
+        tools:text="Мясные\nблюда"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

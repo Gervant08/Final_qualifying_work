@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1"
-        tools:listitem="@layout/screen_menu_dish"
+        tools:listitem="@layout/fragment_menu_item_detailed"
         />
 
 </FrameLayout>
