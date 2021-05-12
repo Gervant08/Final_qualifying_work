@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_item_orange_egg_nog_4" />
+        tools:src="@drawable/image_item_nonalcoholic_orange_egg_nog" />
 
     <TextView
         android:id="@+id/itemDetailedTitle"
