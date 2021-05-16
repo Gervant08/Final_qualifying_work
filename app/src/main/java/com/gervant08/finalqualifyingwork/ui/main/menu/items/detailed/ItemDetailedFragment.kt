@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 
-class ItemDetailedFragment: Fragment(R.layout.fragment_menu_item_detailed) {
+class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
     private val viewModel: ItemDetailedViewModel by viewModels()
     private lateinit var itemImageView: ImageView
     private lateinit var itemTitleTextView: TextView
@@ -33,12 +33,12 @@ class ItemDetailedFragment: Fragment(R.layout.fragment_menu_item_detailed) {
         initViews()
     }
 
-    private fun initViews(){
+    private fun initViews() {
         itemImageView.setImageResource(selectedMenuItem.imageResource)
         itemTitleTextView.text = selectedMenuItem.title
         itemPriceTextView.text = selectedMenuItem.price
         itemWeightTextView.text = selectedMenuItem.weight
         itemDescriptionTextView.text = selectedMenuItem.description
-        itemAddButton.setOnClickListener {  }
+        itemAddButton.setOnClickListener { viewModel.addMenuItemInBasket(selectedMenuItem) }
     }
 }

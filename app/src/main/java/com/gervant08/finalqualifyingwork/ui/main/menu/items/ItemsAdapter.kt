@@ -8,10 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.MenuItem
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.listen
 
-class ItemsAdapter: RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
+class ItemsAdapter(private val listener: (MenuItem) -> Unit): RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
 
     private var menuItemsList = arrayListOf<MenuItem>()
 
@@ -19,11 +18,9 @@ class ItemsAdapter: RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.item_menu_item, parent, false)
         return ItemsViewHolder(view).listen { pos ->
-            NavigateLiveData.selectedMenuItemLiveData
-                .postValue(menuItemsList[pos])
+            listener(menuItemsList[pos])
         }
     }
-
 
     override fun onBindViewHolder(holder: ItemsViewHolder, position: Int) {
         holder.onBind(menuItemsList[position])

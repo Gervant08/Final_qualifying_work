@@ -19,7 +19,8 @@ class ItemsFragment : Fragment(R.layout.fragment_menu_items) {
             )
         )
     }
-    private val itemsAdapter = ItemsAdapter()
+    private val itemsAdapter =
+        ItemsAdapter { menuItem -> itemsViewModel.selectMenuItem(menuItem) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

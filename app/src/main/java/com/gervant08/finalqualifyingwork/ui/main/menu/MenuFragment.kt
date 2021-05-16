@@ -11,8 +11,15 @@ import com.gervant08.finalqualifyingwork.ui.main.menu.common.ViewModelFactory
 
 class MenuFragment : Fragment(R.layout.fragment_menu) {
     private lateinit var menuRecyclerView: RecyclerView
-    private val menuViewModel: MenuViewModel by viewModels { ViewModelFactory(JsonMenuParser.getInstance(requireContext())) }
-    private val menuAdapter = MenuAdapter()
+    private val menuViewModel: MenuViewModel by viewModels {
+        ViewModelFactory(
+            JsonMenuParser.getInstance(
+                requireContext()
+            )
+        )
+    }
+    private val menuAdapter =
+        MenuAdapter { menuCategory -> menuViewModel.selectMenuCategory(menuCategory) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,11 +28,8 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         initListInAdapter()
     }
 
-     private fun initListInAdapter() {
+    private fun initListInAdapter() {
         menuAdapter.initCategoriesList(menuViewModel.getMenuCategories())
     }
-
-
-
 
 }
