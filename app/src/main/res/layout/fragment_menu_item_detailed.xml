@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/chocolate"
+        android:layout_marginStart="20dp"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedImage"
         tools:text="Мясная закуска" />
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedTitle"
         tools:text="Цена: 350 руб. " />
@@ -55,6 +57,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
+        android:layout_marginStart="20dp"
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedPrice"
         tools:text="Состав: Колбаса с/к и с/в, карбонад в/к, говядина в/к, карпаччо из курицы.  " />
     <Button

@@ -4,16 +4,16 @@ import com.gervant08.finalqualifyingwork.R
 
 object MenuLists {
     val menuCategoriesImagesHashMap: HashMap<String, Int> = hashMapOf(
-        "Cold dishes" to R.drawable.image_category_cold_dishes,
-        "Hot dishes" to R.drawable.image_category_hot_dishes,
-        "Soups" to R.drawable.image_category_soups,
-        "Salads" to R.drawable.image_category_salats,
-        "Meat dishes" to R.drawable.image_category_meat_dishes,
-        "Fish dishes" to R.drawable.image_category_fish_dishes,
-        "Seafood" to R.drawable.image_category_seafood,
-        "Alcoholic beverages" to R.drawable.image_category_alcoholic_beverages,
-        "Nonalcoholic beverages" to R.drawable.image_category_nonalcoholic_beverages,
-        "Desserts" to R.drawable.image_category_desserts
+        "Холодные закуски" to R.drawable.image_category_cold_dishes,
+        "Горячие закуски" to R.drawable.image_category_hot_dishes,
+        "Супы" to R.drawable.image_category_soups,
+        "Салаты" to R.drawable.image_category_salats,
+        "Мясные блюда" to R.drawable.image_category_meat_dishes,
+        "Рыбные блюда" to R.drawable.image_category_fish_dishes,
+        "Морепродукты" to R.drawable.image_category_seafood,
+        "Алкогольные напитки" to R.drawable.image_category_alcoholic_beverages,
+        "Безалкогольные напитки" to R.drawable.image_category_nonalcoholic_beverages,
+        "Десерты" to R.drawable.image_category_desserts
     )
     val menuItemsImagesHashMap: HashMap<String, Int> = hashMapOf(
         "Мясная закуска" to R.drawable.image_item_cold_dish_meat_plate,
@@ -62,8 +62,8 @@ object MenuLists {
 
         "Шоколадный коктейль" to R.drawable.image_item_nonalcoholic_chocolate_cocktail,
         "Коктейль \"МОХИТО\"" to R.drawable.image_item_nonalcoholic_mojito,
-        "Бананово-шоколадный" to R.drawable.image_item_nonalcoholic_banana_chocolate_cocktail,
-        "Грушевый коктейль с корицей коктейль" to R.drawable.image_item_nonalcoholic_pear_cocktail_with_cinnamon,
+        "Бананово-шоколадный коктейль" to R.drawable.image_item_nonalcoholic_banana_chocolate_cocktail,
+        "Грушевый коктейль с корицей" to R.drawable.image_item_nonalcoholic_pear_cocktail_with_cinnamon,
         "АПЕЛЬСИНОВЫЙ ЭГ-НОГ" to R.drawable.image_item_nonalcoholic_orange_egg_nog,
 
         "ПАРМЕЗАН" to R.drawable.image_item_dessert_parmezan,

@@ -6,4 +6,6 @@ object NavigateLiveData {
     val loggedUserLiveData = MutableLiveData<User>()
     val selectedCategoryLiveData = MutableLiveData<MenuCategory>()
     val selectedMenuItemLiveData = MutableLiveData<MenuItem>()
+    val selectedMenuItemInBasketLiveData = MutableLiveData<MenuItem>()
+
 }

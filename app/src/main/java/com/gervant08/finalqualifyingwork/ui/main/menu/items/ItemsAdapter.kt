@@ -32,6 +32,13 @@ class ItemsAdapter(private val listener: (MenuItem) -> Unit): RecyclerView.Adapt
         this.menuItemsList = menuItemsList
     }
 
+    private fun weightOrVolume(scalar: String): String{
+        return if (scalar.contains("гр", true))
+            "Вес: $scalar"
+        else
+            "Объем: $scalar"
+    }
+
     inner class ItemsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val menuItemImage: ImageView = itemView.findViewById(R.id.menuItemImage)
         private val menuItemTitle: TextView = itemView.findViewById(R.id.menuItemTitle)
@@ -40,7 +47,7 @@ class ItemsAdapter(private val listener: (MenuItem) -> Unit): RecyclerView.Adapt
         fun onBind(menuItem: MenuItem){
             menuItemImage.setImageResource(menuItem.imageResource)
             menuItemTitle.text = menuItem.title
-            menuItemPrice.text = ("${menuItem.price}. ${menuItem.weight}")
+            menuItemPrice.text = ("Цена: ${menuItem.price} ${weightOrVolume(menuItem.scalar)}")
         }
 
     }

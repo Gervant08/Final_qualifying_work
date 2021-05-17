@@ -16,7 +16,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var mainBottomNavigationView: BottomNavigationView
     private val mainViewModel: MainViewModel by viewModels()
     private lateinit var navHostFragment: NavHostFragment
-    companion object{
+
+    companion object {
         const val ITEM_HOME = "Home"
         const val ITEM_BASKET = "Basket"
         const val ITEM_PROFILE = "Profile"
@@ -24,21 +25,33 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        NavigateLiveData.selectedCategoryLiveData.observe(this, this::onCategorySelected)
-        NavigateLiveData.selectedMenuItemLiveData.observe(this, this::onMenuItemSelected)
+        NavigateLiveData.selectedCategoryLiveData.observe(
+            this,
+            this::navigateToAfterSelectingAnItem
+        )
+        NavigateLiveData.selectedMenuItemLiveData.observe(
+            this,
+            this::navigateToAfterSelectingAnItem
+        )
+
+        NavigateLiveData.selectedMenuItemInBasketLiveData.observe(
+            this,
+            this::navigateToAfterSelectingAnItem
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        navHostFragment = childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
+        navHostFragment =
+            childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
         mainBottomNavigationView = view.findViewById(R.id.main_bottom_navigation)
         setUpBottomNavigation(navHostFragment)
     }
 
-    private fun setUpBottomNavigation(navHostFragment: NavHostFragment){
-        with(mainBottomNavigationView){
-            let {NavigationUI.setupWithNavController(it, navHostFragment.navController) }
+    private fun setUpBottomNavigation(navHostFragment: NavHostFragment) {
+        with(mainBottomNavigationView) {
+            let { NavigationUI.setupWithNavController(it, navHostFragment.navController) }
             setOnNavigationItemSelectedListener { item ->
-                when(item.title){
+                when (item.title) {
                     ITEM_HOME -> navHostFragment.navController.navigate(R.id.home_fragment)
                     ITEM_BASKET -> navHostFragment.navController.navigate(R.id.basket_fragment)
                     ITEM_PROFILE -> navHostFragment.navController.navigate(R.id.profile_fragment)
@@ -48,13 +61,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
     }
 
-     private fun onCategorySelected(menuCategory: MenuCategory){
-        navHostFragment.navController.navigate(R.id.itemsFragment)
-    }
+    private fun navigateToAfterSelectingAnItem(selectedItem: Any) {
+        if (selectedItem is MenuCategory)
+            navHostFragment.navController.navigate(R.id.itemsFragment)
+        if (selectedItem is MenuItem)
+            navHostFragment.navController.navigate(R.id.itemDetailedFragment)
 
-    private fun onMenuItemSelected(menuItem: MenuItem){
-        navHostFragment.navController.navigate(R.id.itemDetailedFragment)
-    }
 
+    }
 
 }
