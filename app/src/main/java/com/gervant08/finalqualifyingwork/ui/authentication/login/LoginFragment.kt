@@ -23,10 +23,7 @@ class LoginFragment(
         LoginViewModelFactory(dataStoreManager)
     }
 
-    override fun onViewCreated(
-        view: View,
-        savedInstanceState: Bundle?
-    ) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewpager)
         registrationButton = view.findViewById(R.id.login_button_registration)
         loginButton = view.findViewById(R.id.login_button_login)

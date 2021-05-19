@@ -8,11 +8,6 @@ import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 class ItemDetailedViewModel: ViewModel() {
 
     fun addMenuItemInBasket(menuItem: MenuItem){
-        val newMenuItemsList = MenuBasket.dishesList.apply {
-            this.value!!.add(menuItem)
-        }
-
-        MenuBasket.dishesList.value = newMenuItemsList.value
         NavigateLiveData.selectedMenuItemInBasketLiveData.postValue(menuItem)
     }
 }

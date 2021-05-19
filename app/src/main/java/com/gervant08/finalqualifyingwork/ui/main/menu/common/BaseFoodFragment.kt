@@ -7,26 +7,31 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 
-abstract class BaseFoodFragment<VM: ViewModel>(private val fragmentId: Int) : Fragment(fragmentId) {
+abstract class BaseFoodFragment<VM: ViewModel, IT: Any>(private val fragmentId: Int) : Fragment(fragmentId) {
 
     protected lateinit var viewModel: VM
-//    protected lateinit var adapter: BaseFoodAdapter
+    protected lateinit var adapter: BaseFoodAdapter<IT>
+    protected lateinit var recyclerView: RecyclerView
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val factory = ViewModelFactory(getJsonMenuParser())
         viewModel = ViewModelProvider(this, factory).get(getViewModel())
-        return inflater.inflate(fragmentId, container, false)
+        initAdapter()
+        recyclerView = view.findViewById(getRecyclerId())
+        recyclerView.adapter = adapter
+        initListInAdapter()
     }
 
-    abstract fun initListInAdapter()
     abstract fun getJsonMenuParser(): JsonMenuParser
     abstract fun getViewModel(): Class<VM>
+    abstract fun getRecyclerId(): Int
+    abstract fun initListInAdapter()
+    abstract fun initAdapter()
 
 
 }

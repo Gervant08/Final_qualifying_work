@@ -1,36 +1,30 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu.items
 
-import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.MenuItem
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
-import com.gervant08.finalqualifyingwork.ui.main.menu.common.ViewModelFactory
+import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodAdapter
+import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodFragment
 
-class ItemsFragment : Fragment(R.layout.fragment_menu_items) {
-    private lateinit var itemsRecyclerView: RecyclerView
-    private val itemsViewModel: ItemsViewModel by viewModels {
-        ViewModelFactory(
-            JsonMenuParser.getInstance(
-                requireContext()
-            )
-        )
-    }
-    private val itemsAdapter =
-        ItemsAdapter { menuItem -> itemsViewModel.selectMenuItem(menuItem) }
+class ItemsFragment : BaseFoodFragment<ItemsViewModel, MenuItem>(R.layout.fragment_menu_items) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        itemsRecyclerView = view.findViewById(R.id.rv_menu_items)
-        itemsRecyclerView.adapter = itemsAdapter
-        initListInAdapter()
+    override fun getRecyclerId(): Int = R.id.rv_menu_items
+    override fun getViewModel(): Class<ItemsViewModel> = ItemsViewModel::class.java
+
+    override fun getJsonMenuParser(): JsonMenuParser =
+        JsonMenuParser.getInstance(requireContext())
+
+    override fun initListInAdapter() {
+        adapter.updateItemsList(viewModel.getItemsListByCategory(NavigateLiveData.selectedCategoryLiveData.value!!.title))
     }
 
-    private fun initListInAdapter() {
-        itemsAdapter.initMenuItemsList(itemsViewModel.getItemsListByCategory(NavigateLiveData.selectedCategoryLiveData.value!!.title))
+    override fun initAdapter() {
+        adapter = ItemsAdapter(object : BaseFoodAdapter.OnItemClickListener<MenuItem> {
+            override fun onClickItem(data: MenuItem) {
+                viewModel.selectMenuItem(data)
+            }
+        })
     }
 
 

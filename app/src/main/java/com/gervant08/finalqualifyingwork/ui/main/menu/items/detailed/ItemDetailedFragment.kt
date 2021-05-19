@@ -33,11 +33,18 @@ class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
         initViews()
     }
 
+    private fun weightOrVolume(scalar: String): String{
+        return if (scalar.contains("гр", true))
+            "Вес: $scalar"
+        else
+            "Объем: $scalar"
+    }
+
     private fun initViews() {
         itemImageView.setImageResource(selectedMenuItem.imageResource)
         itemTitleTextView.text = selectedMenuItem.title
-        itemPriceTextView.text = selectedMenuItem.price
-        itemWeightTextView.text = selectedMenuItem.scalar
+        itemPriceTextView.text = ("Цена: ${selectedMenuItem.price}")
+        itemWeightTextView.text = weightOrVolume(selectedMenuItem.scalar)
         itemDescriptionTextView.text = selectedMenuItem.description
         itemAddButton.setOnClickListener { viewModel.addMenuItemInBasket(selectedMenuItem) }
     }

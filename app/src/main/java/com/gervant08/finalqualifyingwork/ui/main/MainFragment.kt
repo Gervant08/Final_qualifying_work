@@ -27,16 +27,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onCreate(savedInstanceState)
         NavigateLiveData.selectedCategoryLiveData.observe(
             this,
-            this::navigateToAfterSelectingAnItem
+            this::onMenuCategorySelected
         )
         NavigateLiveData.selectedMenuItemLiveData.observe(
             this,
-            this::navigateToAfterSelectingAnItem
+            this::onMenuItemSelected
         )
 
         NavigateLiveData.selectedMenuItemInBasketLiveData.observe(
             this,
-            this::navigateToAfterSelectingAnItem
+            this::onMenuItemAddedInBasket
         )
     }
 
@@ -61,13 +61,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
     }
 
-    private fun navigateToAfterSelectingAnItem(selectedItem: Any) {
-        if (selectedItem is MenuCategory)
-            navHostFragment.navController.navigate(R.id.itemsFragment)
-        if (selectedItem is MenuItem)
-            navHostFragment.navController.navigate(R.id.itemDetailedFragment)
+    private fun onMenuCategorySelected(menuCategory: MenuCategory){
+        navHostFragment.navController.navigate(R.id.itemsFragment)
+    }
 
+    private fun onMenuItemSelected(menuItem: MenuItem) {
+        navHostFragment.navController.navigate(R.id.itemDetailedFragment)
+    }
 
+    private fun onMenuItemAddedInBasket(menuItem: MenuItem){
+        navHostFragment.navController.navigate(R.id.basket_fragment)
     }
 
 }

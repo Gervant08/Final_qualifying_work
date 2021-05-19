@@ -1,35 +1,29 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu
 
-import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.MenuCategory
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
-import com.gervant08.finalqualifyingwork.ui.main.menu.common.ViewModelFactory
+import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodAdapter
+import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodFragment
 
-class MenuFragment : Fragment(R.layout.fragment_menu) {
-    private lateinit var menuRecyclerView: RecyclerView
-    private val menuViewModel: MenuViewModel by viewModels {
-        ViewModelFactory(
-            JsonMenuParser.getInstance(
-                requireContext()
-            )
-        )
-    }
-    private val menuAdapter =
-        MenuAdapter { menuCategory -> menuViewModel.selectMenuCategory(menuCategory) }
+class MenuFragment : BaseFoodFragment<MenuViewModel, MenuCategory>(R.layout.fragment_menu) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        menuRecyclerView = view.findViewById(R.id.rv_menu_categories)
-        menuRecyclerView.adapter = menuAdapter
-        initListInAdapter()
+    override fun getRecyclerId(): Int = R.id.rv_menu_categories
+    override fun getViewModel(): Class<MenuViewModel> = MenuViewModel::class.java
+
+    override fun getJsonMenuParser(): JsonMenuParser =
+        JsonMenuParser.getInstance(requireContext())
+
+    override fun initListInAdapter() {
+        adapter.updateItemsList(viewModel.getMenuCategories())
     }
 
-    private fun initListInAdapter() {
-        menuAdapter.initCategoriesList(menuViewModel.getMenuCategories())
+    override fun initAdapter() {
+        adapter =  MenuAdapter(object : BaseFoodAdapter.OnItemClickListener<MenuCategory>{
+            override fun onClickItem(data: MenuCategory) {
+                viewModel.selectMenuCategory(data)
+            }
+        })
     }
 
 }

@@ -20,8 +20,9 @@ class BasketAdapter: RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
         TODO("Not yet implemented")
     }
 
-    fun initDishesList(dishesList: ArrayList<MenuItem>){
+    fun updateDishesList(dishesList: ArrayList<MenuItem>){
         this.dishesList = dishesList
+        notifyDataSetChanged()
     }
 
     inner class BasketViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
