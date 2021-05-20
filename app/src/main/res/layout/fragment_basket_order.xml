@@ -86,32 +86,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketOrderTable" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/basketOrderClockNum"
+        android:layout_width="82dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/basketOrderClock"
-        app:layout_constraintStart_toEndOf="@+id/basketOrderClock">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="@+id/basketOrderTableMenu"
+        app:layout_constraintStart_toStartOf="@+id/basketOrderTableMenu"
+        app:layout_constraintTop_toTopOf="@+id/basketOrderClock" />
 
     <TextView
         android:id="@+id/basketOrderSum"
