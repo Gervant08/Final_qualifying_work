@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/basketOrderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/basket_order_title_text" />
+
+    <TextView
+        android:id="@+id/basketOrderHumanCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="58dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basketOrderTitle"
+        tools:text="@string/basket_order_human_count_text" />
+
+
+    <Button
+        android:id="@+id/basketOrderHumanCountMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector_3"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/basket_order_human_count_input"
+        android:textColor="@color/whitegold"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderHumanCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/basketOrderHumanCount"
+        app:layout_constraintTop_toTopOf="@+id/basketOrderHumanCount" />
+
+    <TextView
+        android:id="@+id/basketOrderTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="58dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basketOrderHumanCount"
+        tools:text="@string/basket_order_table_text" />
+
+
+    <Button
+        android:id="@+id/basketOrderTableMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector_3"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/basket_order_human_count_input"
+        android:textColor="@color/whitegold"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderTable"
+        app:layout_constraintEnd_toEndOf="@+id/basketOrderHumanCountMenu"
+        app:layout_constraintStart_toStartOf="@+id/basketOrderHumanCountMenu"
+        app:layout_constraintTop_toTopOf="@+id/basketOrderTable" />
+
+    <Button
+        android:id="@+id/basketOrderClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/button_selector_3"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/basket_order_clock"
+        android:textColor="@color/whitegold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basketOrderTable" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderClock"
+        app:layout_constraintStart_toEndOf="@+id/basketOrderClock">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/basketOrderSum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        tools:text="@string/basket_order_sum"
+        android:fontFamily="sans-serif-black"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/basketOrderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/basketOrderButton"
+        android:layout_width="286dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_selector"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/basket_order_button_order_text"
+        android:textColor="@color/chocolate"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

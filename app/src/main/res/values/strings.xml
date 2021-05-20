@@ -10,6 +10,22 @@
     <string name="registration_page_mail">почта</string>
     <string name="registration_page_create_password">придумайте пароль</string>
     <string name="registration_page_button_registration">ЗАРЕГИСТРИРОВАТЬСЯ</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basket_order_button_order_text">Заказать</string>
+    <string name="basket_order_title_text">Оформление заказа</string>
+    <string name="basket_order_human_count_text">Количество человек:</string>
+    <string name="basket_order_human_count_input">1 - 8:</string>
+    <string name="basket_order_human_count_menu_option_1">1</string>
+    <string name="basket_order_human_count_menu_option_2">2</string>
+    <string name="basket_order_human_count_menu_option_3">3</string>
+    <string name="basket_order_human_count_menu_option_4">4</string>
+    <string name="basket_order_human_count_menu_option_5">5</string>
+    <string name="basket_order_human_count_menu_option_6">6</string>
+    <string name="basket_order_table_text">Предпочитаемый столик:</string>
+    <string name="basket_order_table_option_1">Около выхода</string>
+    <string name="basket_order_table_option_2">Около окна</string>
+    <string name="basket_order_table_option_3">В центре зала</string>
+    <string name="basket_order_table_option_4">В конце зала</string>
+    <string name="basket_order_clock">Время посещения</string>
+    <string name="basket_order_sum">Итого: 7800</string>
+
 </resources>
