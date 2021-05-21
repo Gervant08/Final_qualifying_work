@@ -17,7 +17,7 @@ import com.gervant08.finalqualifyingwork.model.data.MenuItem
 abstract class BaseFoodAdapter<T : Any>(val listener: OnItemClickListener<T>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-     var itemList = arrayListOf<T>()
+    private var itemList = arrayListOf<T>()
     private var itemClickListener: OnItemClickListener<T>? = null
 
     init {
@@ -97,7 +97,7 @@ abstract class BaseFoodAdapter<T : Any>(val listener: OnItemClickListener<T>) :
             override fun onBind(data: MenuItem, listener: OnItemClickListener<MenuItem>?) {
                 menuItemImage.setImageResource(data.imageResource)
                 menuItemTitle.text = data.title
-                menuItemPrice.text = ("Цена: ${data.price} ${weightOrVolume(data.scalar)}")
+                menuItemPrice.text = ("Цена: ${data.price} руб. ${weightOrVolume(data.scalar)}")
                 itemView.setOnClickListener { listener?.onClickItem(data) }
             }
         }

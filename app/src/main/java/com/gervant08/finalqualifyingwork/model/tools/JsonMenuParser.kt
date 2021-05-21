@@ -54,7 +54,7 @@ class JsonMenuParser(private val context: Context) {
                 MenuItem(
                     jsonObject.getString(ITEM_TITLE),
                     jsonObject.getString(ITEM_DESCRIPTION),
-                    jsonObject.getString(ITEM_PRICE),
+                    jsonObject.getInt(ITEM_PRICE),
                     jsonObject.getString(ITEM_WEIGHT),
                     MenuLists.menuItemsImagesHashMap[jsonObject.getString(ITEM_TITLE)] ?: 0
                 )

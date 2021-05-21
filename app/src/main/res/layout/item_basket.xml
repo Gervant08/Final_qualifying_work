@@ -32,15 +32,27 @@
         tools:text="Сырная тарелка" />
 
     <TextView
-        android:id="@+id/basketItemPrice"
+        android:id="@+id/basketItemAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="15sp"
+        android:text="@string/basket_dish_amount"
         app:layout_constraintStart_toEndOf="@+id/basketItemImage"
         app:layout_constraintTop_toBottomOf="@+id/basketItemTitle"
-        tools:text="Цена: 330 руб./шт." />
+        />
+
+    <TextView
+        android:id="@+id/basketItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="15sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/basketItemAmount"
+        app:layout_constraintTop_toBottomOf="@+id/basketItemTitle"
+        tools:text="330 руб." />
 
     <TextView
         android:id="@+id/basketItemCount"
@@ -49,6 +61,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
+        android:text="@string/basket_dish_count_text"
         app:layout_constraintBottom_toBottomOf="@+id/basketItemMinusButton"
         app:layout_constraintStart_toEndOf="@+id/basketItemMinusButton"
         app:layout_constraintTop_toTopOf="@+id/basketItemMinusButton"
@@ -63,7 +76,7 @@
         android:background="@drawable/button_selector"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="-"
+        android:text="@string/basket_minus_button_text"
         android:textColor="@color/chocolate"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +91,7 @@
         android:background="@drawable/button_selector"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="+"
+        android:text="@string/basket_plus_button_text"
         android:textColor="@color/chocolate"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"

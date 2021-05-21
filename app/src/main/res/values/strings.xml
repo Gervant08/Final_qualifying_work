@@ -10,6 +10,8 @@
     <string name="registration_page_mail">почта</string>
     <string name="registration_page_create_password">придумайте пароль</string>
     <string name="registration_page_button_registration">ЗАРЕГИСТРИРОВАТЬСЯ</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basket_minus_button_text">-</string>
+    <string name="basket_plus_button_text">+</string>
+    <string name="basket_dish_count_text">0</string>
+    <string name="basket_dish_amount">Общая сумма:</string>
 </resources>
