@@ -7,8 +7,9 @@ import com.gervant08.finalqualifyingwork.model.data.MenuBasket
 import com.gervant08.finalqualifyingwork.model.data.MenuItem
 
 class BasketViewModel: ViewModel() {
+    var dishesList: ArrayList<BasketItem> = arrayListOf()
 
-    fun initBasketDishesList(menuItem: MenuItem) {
+    fun initBasketDishesList(menuItem: BasketItem) {
         val newMenuItemsList = MenuBasket.dishesList.apply {
             this.value!!.add(menuItem)
         }
@@ -30,6 +31,16 @@ class BasketViewModel: ViewModel() {
 
         return basketItemsList
     }
+
+    fun calculatingOrderAmount(basketItemsList: ArrayList<BasketItem>): Int{
+        var orderAmount = 0
+        basketItemsList.forEach { basketItem ->
+            orderAmount += (basketItem.price * basketItem.count)
+        }
+
+        return orderAmount
+    }
+
 
     fun deleteItemFromBasket(basketItem: BasketItem){
         val newMenuItemsList = MenuBasket.dishesList.apply {

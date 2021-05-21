@@ -8,7 +8,7 @@ import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodFragment
 
 class MenuFragment : BaseFoodFragment<MenuViewModel, MenuCategory>(R.layout.fragment_menu) {
 
-    override fun getRecyclerId(): Int = R.id.rv_menu_categories
+    override fun getRecyclerId(): Int = R.id.rvBasketItems
     override fun getViewModel(): Class<MenuViewModel> = MenuViewModel::class.java
 
     override fun getJsonMenuParser(): JsonMenuParser =

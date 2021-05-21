@@ -28,7 +28,7 @@ class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
         itemPriceTextView = view.findViewById(R.id.itemDetailedPrice)
         itemWeightTextView = view.findViewById(R.id.itemDetailedWeight)
         itemDescriptionTextView = view.findViewById(R.id.itemDetailedDescription)
-        itemAddButton = view.findViewById(R.id.itemDetailedAddButton)
+        itemAddButton = view.findViewById(R.id.basketOrderButton)
 
         initViews()
     }

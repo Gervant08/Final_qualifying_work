@@ -32,7 +32,7 @@
         tools:text="Сырная тарелка" />
 
     <TextView
-        android:id="@+id/basketItemAmount"
+        android:id="@+id/basketItemAmountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -50,7 +50,7 @@
         android:fontFamily="sans-serif-medium"
         android:textSize="15sp"
         android:layout_marginStart="5dp"
-        app:layout_constraintStart_toEndOf="@+id/basketItemAmount"
+        app:layout_constraintStart_toEndOf="@+id/basketItemAmountText"
         app:layout_constraintTop_toBottomOf="@+id/basketItemTitle"
         tools:text="330 руб." />
 
@@ -61,11 +61,9 @@
         android:layout_marginStart="10dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
-        android:text="@string/basket_dish_count_text"
         app:layout_constraintBottom_toBottomOf="@+id/basketItemMinusButton"
         app:layout_constraintStart_toEndOf="@+id/basketItemMinusButton"
-        app:layout_constraintTop_toTopOf="@+id/basketItemMinusButton"
-        tools:text="100" />
+        app:layout_constraintTop_toTopOf="@+id/basketItemMinusButton" />
 
     <Button
         android:id="@+id/basketItemMinusButton"

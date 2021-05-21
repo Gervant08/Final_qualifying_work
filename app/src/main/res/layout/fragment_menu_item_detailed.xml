@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedPrice"
         tools:text="Состав: Колбаса с/к и с/в, карбонад в/к, говядина в/к, карпаччо из курицы.  " />
     <Button
-        android:id="@+id/itemDetailedAddButton"
+        android:id="@+id/basketOrderButton"
         android:layout_width="286dp"
         android:layout_height="40dp"
         android:layout_marginBottom="18dp"

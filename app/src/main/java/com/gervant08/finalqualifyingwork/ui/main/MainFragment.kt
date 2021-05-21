@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.BasketItem
 import com.gervant08.finalqualifyingwork.model.data.MenuCategory
 import com.gervant08.finalqualifyingwork.model.data.MenuItem
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
@@ -26,18 +27,23 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         NavigateLiveData.selectedCategoryLiveData.observe(
-            this,
-            this::onMenuCategorySelected
+            this, this::onMenuCategorySelected
         )
         NavigateLiveData.selectedMenuItemLiveData.observe(
-            this,
-            this::onMenuItemSelected
+            this, this::onMenuItemSelected
         )
 
         NavigateLiveData.selectedMenuItemInBasketLiveData.observe(
-            this,
-            this::onMenuItemAddedInBasket
+            this, this::onMenuItemAddedInBasket
         )
+
+        NavigateLiveData.filledBasketLiveData.observe(
+            this, this::onBasketFilled)
+
+        NavigateLiveData.madeOrderLiveData.observe(
+            this, this::onOrderMade
+        )
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,7 +67,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
     }
 
-    private fun onMenuCategorySelected(menuCategory: MenuCategory){
+    private fun onMenuCategorySelected(menuCategory: MenuCategory) {
         navHostFragment.navController.navigate(R.id.itemsFragment)
     }
 
@@ -69,8 +75,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         navHostFragment.navController.navigate(R.id.itemDetailedFragment)
     }
 
-    private fun onMenuItemAddedInBasket(menuItem: MenuItem){
+    private fun onMenuItemAddedInBasket(basketItem: BasketItem) {
         navHostFragment.navController.navigate(R.id.basket_fragment)
+    }
+
+    private fun onBasketFilled(isFilled: Boolean) {
+        navHostFragment.navController.navigate(R.id.orderFragment)
+    }
+
+    private fun onOrderMade(isMade: Boolean) {
     }
 
 }

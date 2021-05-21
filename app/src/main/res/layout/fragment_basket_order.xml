@@ -108,12 +108,12 @@
         tools:text="@string/basket_order_sum"
         android:fontFamily="sans-serif-black"
         android:textSize="19sp"
-        app:layout_constraintBottom_toTopOf="@+id/basketOrderButton"
+        app:layout_constraintBottom_toTopOf="@+id/orderButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/basketOrderButton"
+        android:id="@+id/orderButton"
         android:layout_width="286dp"
         android:layout_height="40dp"
         android:layout_marginBottom="18dp"
