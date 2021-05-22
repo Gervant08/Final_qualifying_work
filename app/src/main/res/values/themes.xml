@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.FinalQualifyingWork" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/whitegold</item>
+        <item name="colorPrimary">@color/chocolate</item>
         <item name="colorPrimaryVariant">@color/chocolate</item>
         <item name="colorOnPrimary">@color/whitegold_pale_38</item>
         <!-- Secondary brand color. -->

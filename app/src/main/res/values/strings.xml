@@ -27,5 +27,6 @@
     <string name="basket_order_table_option_4">В конце зала</string>
     <string name="basket_order_clock">Время посещения</string>
     <string name="basket_order_sum">Итого: 7800</string>
+    <string name="profile_telephone">телефон</string>
 
 </resources>

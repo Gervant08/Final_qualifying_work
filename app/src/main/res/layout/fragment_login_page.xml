@@ -70,7 +70,7 @@
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/login_page_button_registration"
-        android:textColor="@color/chocolate"
+        android:textColor="@color/whitegold"
         android:textSize="13dp"
 
         app:layout_constraintEnd_toEndOf="parent"

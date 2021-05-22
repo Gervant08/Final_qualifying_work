@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/dish_background">
 
 
     <TextView
@@ -121,11 +122,12 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/basket_order_button_order_text"
-        android:textColor="@color/chocolate"
+        android:textColor="@color/whitegold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 
