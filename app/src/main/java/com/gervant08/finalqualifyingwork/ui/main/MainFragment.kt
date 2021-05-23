@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
@@ -76,7 +77,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun onMenuItemAddedInBasket(basketItem: BasketItem) {
-        navHostFragment.navController.navigate(R.id.basket_fragment)
+            navHostFragment.navController.navigate(R.id.basket_fragment)
     }
 
     private fun onBasketFilled(isFilled: Boolean) {

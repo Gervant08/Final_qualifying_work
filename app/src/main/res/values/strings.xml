@@ -13,7 +13,8 @@
     <string name="basket_order_button_order_text">Заказать</string>
     <string name="basket_order_title_text">Оформление заказа</string>
     <string name="basket_order_human_count_text">Количество человек:</string>
-    <string name="basket_order_human_count_input">1 - 8:</string>
+    <string name="basket_order_table_count_input">Выбрать</string>
+    <string name="basket_order_human_count_input">Выбрать</string>
     <string name="basket_order_human_count_menu_option_1">1</string>
     <string name="basket_order_human_count_menu_option_2">2</string>
     <string name="basket_order_human_count_menu_option_3">3</string>

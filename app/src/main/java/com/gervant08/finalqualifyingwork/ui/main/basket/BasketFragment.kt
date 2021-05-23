@@ -28,7 +28,9 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
     }
 
     private fun initBasketDishesList() {
-        basketViewModel.initBasketDishesList(NavigateLiveData.selectedMenuItemInBasketLiveData.value!!)
+        if (MenuBasket.dishesList.value!!.size == 0)
+            MenuBasket.dishesList.value = arrayListOf(NavigateLiveData.selectedMenuItemInBasketLiveData.value!!)
+        basketViewModel.addDishInBasket(NavigateLiveData.selectedMenuItemInBasketLiveData.value!!)
         basketAdapter.updateDishesList(MenuBasket.dishesList.value!!)
     }
 
@@ -37,13 +39,15 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         basketRecyclerView = view.findViewById(R.id.rvBasketItems)
         basketRecyclerView.adapter = basketAdapter
         orderButton = view.findViewById(R.id.basketOrderButton)
-        orderButton.setOnClickListener { goToCheckoutPage() }
+        orderButton.setOnClickListener { goToOrderPage() }
         orderAmountTextView = view.findViewById(R.id.basketOrderAmount)
         orderAmountTextView.text = basketViewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
     }
 
-    private fun goToCheckoutPage() {
-
+    private fun goToOrderPage() {
+        if (MenuBasket.dishesList.value!!.size > 0){
+            NavigateLiveData.filledBasketLiveData.value = true
+        }
     }
 
     private fun deleteItemFromBasket(basketItem: BasketItem){

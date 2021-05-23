@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/basketItemImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Сырная тарелка" />
@@ -75,7 +75,7 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/basket_minus_button_text"
-        android:textColor="@color/chocolate"
+        android:textColor="@color/whitegold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/basketItemImage" />
@@ -90,7 +90,7 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/basket_plus_button_text"
-        android:textColor="@color/chocolate"
+        android:textColor="@color/whitegold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/basketItemCount" />
