@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_input_mail" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/profile_edit_profile"
         android:layout_width="30dp"
         android:layout_height="30dp"
