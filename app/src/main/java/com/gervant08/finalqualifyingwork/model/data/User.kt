@@ -1,3 +1,3 @@
 package com.gervant08.finalqualifyingwork.model.data
 
-class User(val email: String?, val password: String?)
+data class User( var lastname: String = "", var name: String = "")

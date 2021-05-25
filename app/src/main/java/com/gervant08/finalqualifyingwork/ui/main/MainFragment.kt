@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
@@ -15,8 +14,8 @@ import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment(R.layout.fragment_main) {
-    private lateinit var mainBottomNavigationView: BottomNavigationView
-    private val mainViewModel: MainViewModel by viewModels()
+    private lateinit var bottomNavigationView: BottomNavigationView
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var navHostFragment: NavHostFragment
 
     companion object {
@@ -50,12 +49,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         navHostFragment =
             childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
-        mainBottomNavigationView = view.findViewById(R.id.main_bottom_navigation)
+        bottomNavigationView = view.findViewById(R.id.main_bottom_navigation)
         setUpBottomNavigation(navHostFragment)
     }
 
     private fun setUpBottomNavigation(navHostFragment: NavHostFragment) {
-        with(mainBottomNavigationView) {
+        with(bottomNavigationView) {
             let { NavigationUI.setupWithNavController(it, navHostFragment.navController) }
             setOnNavigationItemSelectedListener { item ->
                 when (item.title) {

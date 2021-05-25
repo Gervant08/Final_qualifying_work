@@ -7,21 +7,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.tools.UserPreferences
 import com.google.android.material.textfield.TextInputEditText
 
-class LoginFragment(
-    dataStoreManager: UserPreferences
-) : Fragment(R.layout.fragment_login_page) {
+class LoginFragment : Fragment(R.layout.fragment_login_page) {
 
     private lateinit var registrationButton: Button
     private lateinit var loginButton: Button
     private lateinit var passwordEditText: TextInputEditText
     private lateinit var emailEditText: TextInputEditText
 
-    private val loginViewModel: LoginViewModel by viewModels {
-        LoginViewModelFactory(dataStoreManager)
-    }
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewpager)
@@ -40,11 +35,11 @@ class LoginFragment(
     }
 
     private fun login() {
-        val email = emailEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val email = emailEditText.text.toString().filter { !it.isWhitespace() }
+        val password = passwordEditText.text.toString().filter { !it.isWhitespace() }
 
         if (email.isNotEmpty() && password.isNotEmpty())
-            loginViewModel.login(email, password)
+            viewModel.login(email, password)
 
     }
 }

@@ -6,12 +6,10 @@ import androidx.navigation.fragment.NavHostFragment
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.app.MyApp
 import com.gervant08.finalqualifyingwork.model.data.*
-import com.gervant08.finalqualifyingwork.model.tools.UserPreferences
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 
 class RootActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
-    private val dataStoreManager = UserPreferences.getInstance(MyApp.applicationContext)
     private val jsonMenuParser = JsonMenuParser.getInstance(MyApp.applicationContext)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +21,10 @@ class RootActivity : AppCompatActivity() {
 
     }
 
-    private fun goToMainScreen(user: User) {
-        navigateTo(R.id.main_fragment)
+    private fun goToMainScreen(isLogged: Boolean) {
+        if (isLogged)
+            navigateTo(R.id.main_fragment)
+
     }
 
     private fun navigateTo(fragmentId: Int) {

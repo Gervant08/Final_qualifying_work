@@ -27,13 +27,6 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         initBasketDishesList()
     }
 
-    private fun initBasketDishesList() {
-        if (MenuBasket.dishesList.value!!.size == 0)
-            MenuBasket.dishesList.value = arrayListOf(NavigateLiveData.selectedMenuItemInBasketLiveData.value!!)
-        basketViewModel.addDishInBasket(NavigateLiveData.selectedMenuItemInBasketLiveData.value!!)
-        basketAdapter.updateDishesList(MenuBasket.dishesList.value!!)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         basketRecyclerView = view.findViewById(R.id.rvBasketItems)
@@ -42,6 +35,10 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         orderButton.setOnClickListener { goToOrderPage() }
         orderAmountTextView = view.findViewById(R.id.basketOrderAmount)
         orderAmountTextView.text = basketViewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
+    }
+
+    private fun initBasketDishesList() {
+        basketAdapter.updateDishesList(MenuBasket.dishesList.value!!)
     }
 
     private fun goToOrderPage() {

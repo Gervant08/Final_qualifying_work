@@ -12,40 +12,33 @@ import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 
 class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
     private val viewModel: ItemDetailedViewModel by viewModels()
-    private lateinit var itemImageView: ImageView
-    private lateinit var itemTitleTextView: TextView
-    private lateinit var itemPriceTextView: TextView
-    private lateinit var itemWeightTextView: TextView
-    private lateinit var itemDescriptionTextView: TextView
-    private lateinit var itemAddButton: Button
+    private lateinit var imageView: ImageView
+    private lateinit var titleTextView: TextView
+    private lateinit var priceTextView: TextView
+    private lateinit var weightTextView: TextView
+    private lateinit var descriptionTextView: TextView
+    private lateinit var addButton: Button
     private val selectedMenuItem = NavigateLiveData.selectedMenuItemLiveData.value!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        itemImageView = view.findViewById(R.id.itemDetailedImage)
-        itemTitleTextView = view.findViewById(R.id.itemDetailedTitle)
-        itemPriceTextView = view.findViewById(R.id.itemDetailedPrice)
-        itemWeightTextView = view.findViewById(R.id.itemDetailedWeight)
-        itemDescriptionTextView = view.findViewById(R.id.itemDetailedDescription)
-        itemAddButton = view.findViewById(R.id.basketOrderButton)
+        imageView = view.findViewById(R.id.itemDetailedImage)
+        titleTextView = view.findViewById(R.id.itemDetailedTitle)
+        priceTextView = view.findViewById(R.id.itemDetailedPrice)
+        weightTextView = view.findViewById(R.id.itemDetailedWeight)
+        descriptionTextView = view.findViewById(R.id.itemDetailedDescription)
+        addButton = view.findViewById(R.id.basketOrderButton)
 
         initViews()
     }
 
-    private fun weightOrVolume(scalar: String): String{
-        return if (scalar.contains("гр", true))
-            "Вес: $scalar"
-        else
-            "Объем: $scalar"
-    }
-
     private fun initViews() {
-        itemImageView.setImageResource(selectedMenuItem.imageResource)
-        itemTitleTextView.text = selectedMenuItem.title
-        itemPriceTextView.text = ("Цена: ${selectedMenuItem.price}")
-        itemWeightTextView.text = weightOrVolume(selectedMenuItem.scalar)
-        itemDescriptionTextView.text = selectedMenuItem.description
-        itemAddButton.setOnClickListener { viewModel.addMenuItemInBasket(selectedMenuItem) }
+        imageView.setImageResource(selectedMenuItem.imageResource)
+        titleTextView.text = selectedMenuItem.title
+        priceTextView.text = ("Цена: ${selectedMenuItem.price}")
+        weightTextView.text = viewModel.weightOrVolume(selectedMenuItem.scalar)
+        descriptionTextView.text = selectedMenuItem.description
+        addButton.setOnClickListener { viewModel.addMenuItemInBasket(selectedMenuItem) }
     }
 }

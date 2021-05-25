@@ -17,82 +17,78 @@
         android:background="@drawable/ic_profile" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/profile_input_name"
+        android:id="@+id/profileInputName"
         android:layout_width="280dp"
         android:layout_height="47dp"
         android:layout_marginBottom="337dp"
-
         android:backgroundTint="@color/chocolate"
         android:hint="@string/registration_page_name"
+        android:enabled="false"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/profile_input_last_name"
+        android:id="@+id/profileInputLastName"
         android:layout_width="280dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
-
         android:backgroundTint="@color/chocolate"
         android:hint="@string/registration_page_last_name"
+        android:enabled="false"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_input_name" />
+        app:layout_constraintTop_toBottomOf="@+id/profileInputName" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/profile_input_mail"
+        android:id="@+id/profileInputMail"
         android:layout_width="280dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
-
         android:backgroundTint="@color/chocolate"
         android:hint="@string/registration_page_mail"
+        android:enabled="false"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_input_last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/profileInputLastName" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/profile_input_phone"
+        android:id="@+id/profileInputPhone"
         android:layout_width="280dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
-
         android:backgroundTint="@color/chocolate"
         android:hint="@string/profile_telephone"
+        android:enabled="false"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_input_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/profileInputMail" />
 
     <ImageButton
-        android:id="@+id/profile_edit_profile"
+        android:id="@+id/profileEditProfileButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/profile_edit_selector"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

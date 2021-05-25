@@ -6,40 +6,34 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.tools.UserPreferences
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class RegistrationFragment(
-    dataStoreManager: UserPreferences
-) : Fragment(R.layout.fragment_reg_page) {
+class RegistrationFragment : Fragment(R.layout.fragment_reg_page) {
 
-    private lateinit var passwordEditText: TextInputEditText
-    private lateinit var emailEditText: TextInputEditText
+    private lateinit var registrationInputName : TextInputEditText
+    private lateinit var registrationInputLastName : TextInputEditText
+    private lateinit var registrationInputEmail: TextInputEditText
+    private lateinit var registrationInputPassword: TextInputEditText
     private lateinit var registrationButton: Button
 
-    private val registrationViewModel: RegistrationViewModel by viewModels {
-        RegistrationViewModelFactory(dataStoreManager)
-    }
-
+    private val registrationViewModel: RegistrationViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        registrationButton = view.findViewById(R.id.registration_button_registration)
-        emailEditText = view.findViewById(R.id.registration_input_mail)
-        passwordEditText = view.findViewById(R.id.registration_input_password)
+        registrationButton = view.findViewById(R.id.registrationButtonRegistration)
+        registrationInputName = view.findViewById(R.id.registrationInputName)
+        registrationInputLastName = view.findViewById(R.id.registrationInputLastName)
+        registrationInputEmail = view.findViewById(R.id.registrationInputEmail)
+        registrationInputPassword = view.findViewById(R.id.registrationInputPassword)
 
         registrationButton.setOnClickListener {
                 registration()
         }
-
     }
 
     private fun registration() {
-        val email = emailEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val userEmail = registrationInputEmail.text.toString().filter { !it.isWhitespace() }
+        val userPassword = registrationInputPassword.text.toString().filter { !it.isWhitespace() }
 
-        if (email.isNotEmpty() && password.isNotEmpty())
-            registrationViewModel.registration(email, password)
+        if (userEmail.isNotEmpty() && userPassword.isNotEmpty())
+            registrationViewModel.registration(userEmail, userPassword)
     }
 }

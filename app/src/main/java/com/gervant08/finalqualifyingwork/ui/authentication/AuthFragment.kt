@@ -7,10 +7,9 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.tools.UserPreferences
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
-    private val authViewModel: AuthViewModel by viewModels { AuthViewModelFactory(UserPreferences.getInstance(requireContext())) }
+    private val authViewModel: AuthViewModel by viewModels ()
     private lateinit var authViewPager: ViewPager2
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "168232077663",
-    "project_id": "final-qualifying-work-36ea0",
-    "storage_bucket": "final-qualifying-work-36ea0.appspot.com"
+    "project_number": "966237694329",
+    "project_id": "finalqualifyingwork",
+    "storage_bucket": "finalqualifyingwork.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:168232077663:android:4da1efa059872a104c8eea",
+        "mobilesdk_app_id": "1:966237694329:android:6d2aeb576134d5f20ca7a8",
         "android_client_info": {
           "package_name": "com.gervant08.finalqualifyingwork"
         }
       },
       "oauth_client": [
         {
-          "client_id": "168232077663-7uosgjabd4n7818kqdlg5e9373ed7vc1.apps.googleusercontent.com",
+          "client_id": "966237694329-4mff5ujtae1tkmqsjg5ou98nu3ome0uu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAhJ3P4wLY1jqp--aEXNQG05rtxx7qvvyY"
+          "current_key": "AIzaSyDLrz_xOnxxplUZqsZgF3MRncoTrORN6ro"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "168232077663-7uosgjabd4n7818kqdlg5e9373ed7vc1.apps.googleusercontent.com",
+              "client_id": "966237694329-4mff5ujtae1tkmqsjg5ou98nu3ome0uu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

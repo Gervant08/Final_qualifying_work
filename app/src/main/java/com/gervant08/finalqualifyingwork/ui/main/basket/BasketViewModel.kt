@@ -3,21 +3,9 @@ package com.gervant08.finalqualifyingwork.ui.main.basket
 import androidx.lifecycle.ViewModel
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
 import com.gervant08.finalqualifyingwork.model.data.MenuBasket
+import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
 
 class BasketViewModel: ViewModel() {
-
-    fun addDishInBasket(menuItem: BasketItem) {
-        val newMenuItemsList = arrayListOf<BasketItem>()
-        MenuBasket.dishesList.value!!.forEach {
-            newMenuItemsList.add(it)
-        }
-        newMenuItemsList.add(menuItem)
-
-        if (MenuBasket.dishesList.value!!.last().title == menuItem.title)
-            return
-        else
-            MenuBasket.dishesList.value = newMenuItemsList
-    }
 
     fun calculatingOrderAmount(basketItemsList: ArrayList<BasketItem>): Int{
         var orderAmount = 0
