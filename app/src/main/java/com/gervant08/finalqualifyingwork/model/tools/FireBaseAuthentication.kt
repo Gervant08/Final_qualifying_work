@@ -22,10 +22,15 @@ class FireBaseAuthentication {
     }
 
     fun registration(userEmail: String, userPassword: String){
-        auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener{
-            if (it.isSuccessful) {
-                NavigateLiveData.loggedUserLiveData.value = true
-                database.child("users").setValue(User(userEmail, userPassword))
+        auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener{ completeRegistration ->
+            if (completeRegistration.isSuccessful) {
+                val user = User(userEmail, userPassword)
+
+                database.child("users").child(completeRegistration.result!!.user!!.uid).setValue(user).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        NavigateLiveData.loggedUserLiveData.value = true
+                    }
+                }
             }
         }
     }

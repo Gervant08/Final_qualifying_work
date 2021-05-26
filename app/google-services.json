@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "966237694329",
-    "project_id": "finalqualifyingwork",
-    "storage_bucket": "finalqualifyingwork.appspot.com"
+    "project_number": "838754142980",
+    "project_id": "final-qualifying-work-fbaf2",
+    "storage_bucket": "final-qualifying-work-fbaf2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:966237694329:android:6d2aeb576134d5f20ca7a8",
+        "mobilesdk_app_id": "1:838754142980:android:905d8e833a457c0e9d9e51",
         "android_client_info": {
           "package_name": "com.gervant08.finalqualifyingwork"
         }
       },
       "oauth_client": [
         {
-          "client_id": "966237694329-4mff5ujtae1tkmqsjg5ou98nu3ome0uu.apps.googleusercontent.com",
+          "client_id": "838754142980-bss8h2ae5m7fef7ti48v5tohks59r3da.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDLrz_xOnxxplUZqsZgF3MRncoTrORN6ro"
+          "current_key": "AIzaSyCRGJo_z1jy2PagMVo6TAr01BvMfmi8-S0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "966237694329-4mff5ujtae1tkmqsjg5ou98nu3ome0uu.apps.googleusercontent.com",
+              "client_id": "838754142980-bss8h2ae5m7fef7ti48v5tohks59r3da.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

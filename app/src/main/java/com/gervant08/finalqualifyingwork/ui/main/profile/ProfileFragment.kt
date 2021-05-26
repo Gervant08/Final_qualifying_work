@@ -6,23 +6,25 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.User
+import com.gervant08.finalqualifyingwork.model.tools.FireBaseAuthentication
+import com.gervant08.finalqualifyingwork.model.tools.OrderNotification
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-    private val fireBaseAuthentication = FirebaseAuth.getInstance()
-    private val fireBaseAuthenticationReference = FirebaseDatabase.getInstance().reference
+    private val fireBaseAuthentication = FireBaseAuthentication()
+    private val authentication = fireBaseAuthentication.auth
+    private val fireBaseAuthenticationReference = fireBaseAuthentication.database
 
-    private val viewModel: ProfileViewModel by viewModels()
+//    private val viewModel: ProfileViewModel by viewModels<ProfileViewModel> ()
     private lateinit var avatar: ImageView
     private lateinit var name: TextInputEditText
     private lateinit var lastName: TextInputEditText
@@ -67,11 +69,13 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
 
     private fun getUser() {
-        fireBaseAuthenticationReference.child("users")
-            .child(fireBaseAuthentication.currentUser!!.uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
+        fireBaseAuthenticationReference
+            .child("users")
+            .child(authentication.currentUser!!.uid)
+            .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)
+                    Toast.makeText(requireContext(), "НАКОНЕЦ-ТО КАК Я УЖЕ ЗАЕБАЛСЯ", Toast.LENGTH_SHORT).show()
                     name.setText(user!!.name, TextView.BufferType.EDITABLE)
                     lastName.setText(user.lastname, TextView.BufferType.EDITABLE)
                 }

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -54,12 +55,10 @@ dependencies {
     /*LiveData*/
 
     /*Firebase*/
-    implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation "com.google.firebase:firebase-core:19.0.0"
-    implementation "com.google.firebase:firebase-auth:21.0.1"
-    implementation "com.google.firebase:firebase-firestore:23.0.0"
-    implementation "com.google.firebase:firebase-database-ktx:20.0.0"
-    implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
+    implementation "com.google.firebase:firebase-storage:20.0.0"
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-database:20.0.0'
     /*Firebase*/
 
     /*Navigation*/

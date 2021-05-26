@@ -1,15 +1,19 @@
 package com.gervant08.finalqualifyingwork.ui.main.basket.order
 
 import android.app.TimePickerDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.tools.OrderNotification
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,12 +29,14 @@ class OrderFragment: Fragment(R.layout.fragment_basket_order) {
     private lateinit var basketOrderTableMenu: Button
     private lateinit var basketOrderClock: Button
     private lateinit var orderButton: Button
+    private val orderNotification = OrderNotification()
 
     companion object{
         const val POPUP_TABLE: Int = R.menu.popup_table_menu
         const val POPUP_HUMAN: Int = R.menu.popup_human_count_menu
+        const val NOTIFICATION_TITLE = "Ваш заказ скоро будет готов"
+        const val NOTIFICATION_TEXT = "Через 20 минут ваш заказ будет готов. Приходите, мы вас ждем"
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -89,6 +95,6 @@ class OrderFragment: Fragment(R.layout.fragment_basket_order) {
     }
 
     private fun makeOrder(){
-
+        orderNotification.createNotification(requireContext(), NOTIFICATION_TITLE, NOTIFICATION_TEXT)
     }
 }
