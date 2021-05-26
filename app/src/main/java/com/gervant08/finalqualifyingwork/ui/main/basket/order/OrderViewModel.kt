@@ -12,13 +12,18 @@ class OrderViewModel : ViewModel() {
         const val ORDER_TABLE_3 = "В центре зала"
         const val ORDER_TABLE_4 = "В конце зала"
 
-        const val ORDER_HUMAN_COUNT_0 = "Количество человек: 0"
-        const val ORDER_HUMAN_COUNT_1 = "Количество человек: 1"
-        const val ORDER_HUMAN_COUNT_2 = "Количество человек: 2"
-        const val ORDER_HUMAN_COUNT_3 = "Количество человек: 3"
-        const val ORDER_HUMAN_COUNT_4 = "Количество человек: 4"
-        const val ORDER_HUMAN_COUNT_5 = "Количество человек: 5"
-        const val ORDER_HUMAN_COUNT_6 = "Количество человек: 6"
+        const val ORDER_HUMAN_COUNT_0 = "0"
+        const val ORDER_HUMAN_COUNT_1 = "1"
+        const val ORDER_HUMAN_COUNT_2 = "2"
+        const val ORDER_HUMAN_COUNT_3 = "3"
+        const val ORDER_HUMAN_COUNT_4 = "4"
+        const val ORDER_HUMAN_COUNT_5 = "5"
+        const val ORDER_HUMAN_COUNT_6 = "6"
+
+        const val READY_ORDER_TITLE = "Заказ сделан"
+        const val READY_ORDER_TEXT = "Ваш заказ начали готовить, приходите к указанному времени"
+        const val UNREADY_ORDER_TITLE = "Заказ не создан"
+        const val UNREADY_ORDER_TEXT = "Вы забыли что-то выбрать"
     }
 
     fun chooseTable(itemId: Int): String {
@@ -49,5 +54,13 @@ class OrderViewModel : ViewModel() {
            amount += it.price * it.count
         }
         return amount.toString()
+    }
+
+    fun createTextForDialogFragment(isOrderReadyToCreated: Boolean): Pair<String, String> {
+        return if (isOrderReadyToCreated){
+            (READY_ORDER_TITLE to READY_ORDER_TEXT)
+        }else{
+            (UNREADY_ORDER_TITLE to UNREADY_ORDER_TEXT)
+        }
     }
 }

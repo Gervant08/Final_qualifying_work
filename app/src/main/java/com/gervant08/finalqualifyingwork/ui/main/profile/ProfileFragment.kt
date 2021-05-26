@@ -70,7 +70,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun getUser() {
         fireBaseAuthenticationReference
-            .child("users")
             .child(authentication.currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {

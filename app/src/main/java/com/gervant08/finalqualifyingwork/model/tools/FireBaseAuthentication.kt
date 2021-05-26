@@ -6,7 +6,7 @@ import com.gervant08.finalqualifyingwork.model.data.User
 import com.google.firebase.database.*
 
 class FireBaseAuthentication {
-    val database = FirebaseDatabase.getInstance().reference
+    val database = FirebaseDatabase.getInstance().getReference("users")
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     companion object{
@@ -26,7 +26,7 @@ class FireBaseAuthentication {
             if (completeRegistration.isSuccessful) {
                 val user = User(userEmail, userPassword)
 
-                database.child("users").child(completeRegistration.result!!.user!!.uid).setValue(user).addOnCompleteListener {
+                database.child(completeRegistration.result!!.user!!.uid).setValue(user).addOnCompleteListener {
                     if (it.isSuccessful){
                         NavigateLiveData.loggedUserLiveData.value = true
                     }

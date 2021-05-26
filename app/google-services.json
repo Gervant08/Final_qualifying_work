@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "838754142980",
+    "firebase_url": "https://final-qualifying-work-fbaf2-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "final-qualifying-work-fbaf2",
     "storage_bucket": "final-qualifying-work-fbaf2.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "838754142980-efegtvpmbqlr0k3vnljn6ejgl1pflbmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gervant08.finalqualifyingwork",
+            "certificate_hash": "edf1c9cc3d8537481dab0805c9b5322f6fd59bee"
+          }
+        },
         {
           "client_id": "838754142980-bss8h2ae5m7fef7ti48v5tohks59r3da.apps.googleusercontent.com",
           "client_type": 3

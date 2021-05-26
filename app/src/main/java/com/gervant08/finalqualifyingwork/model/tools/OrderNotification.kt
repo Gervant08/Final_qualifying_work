@@ -7,7 +7,7 @@ import com.gervant08.finalqualifyingwork.R
 
 class OrderNotification() {
     companion object {
-        const val NOTIFICATION_ID = 1
+        const val NOTIFICATION_ID = 101
         const val CHANNEL_ID = "channelID"
     }
 

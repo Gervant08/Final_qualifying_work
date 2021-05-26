@@ -13,8 +13,8 @@
     <string name="basket_order_button_order_text">Заказать</string>
     <string name="basket_order_title_text">Оформление заказа</string>
     <string name="basket_order_human_count_text">Количество человек:</string>
-    <string name="basket_order_table_count_input">Выбрать</string>
-    <string name="basket_order_human_count_input">Выбрать</string>
+    <string name="basket_order_table_count_input">Выбрать столик</string>
+    <string name="basket_order_human_count_input">Выбрать кол-во человек</string>
     <string name="basket_order_human_count_menu_option_1">1</string>
     <string name="basket_order_human_count_menu_option_2">2</string>
     <string name="basket_order_human_count_menu_option_3">3</string>
@@ -26,7 +26,7 @@
     <string name="basket_order_table_option_2">Около окна</string>
     <string name="basket_order_table_option_3">В центре зала</string>
     <string name="basket_order_table_option_4">В конце зала</string>
-    <string name="basket_order_clock">Время посещения</string>
+    <string name="basket_order_clock">Выбрать время</string>
     <string name="basket_order_sum">Итого: 7800</string>
     <string name="basket_minus_button_text">-</string>
     <string name="basket_plus_button_text">+</string>
