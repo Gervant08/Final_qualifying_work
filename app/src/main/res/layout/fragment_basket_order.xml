@@ -14,92 +14,93 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="22sp"
         android:text="@string/basket_order_title_text"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/basketOrderHumanCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketOrderTitle"
-        tools:text="1094873"/>
-
+        tools:text="1094873" />
 
     <Button
         android:id="@+id/basketOrderHumanCountMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:background="@drawable/button_selector_3"
         android:fontFamily="sans-serif-medium"
         android:text="@string/basket_order_human_count_input"
         android:textColor="@color/whitegold"
-        android:layout_marginEnd="20dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/basketOrderHumanCount"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/basketOrderHumanCount" />
+
 
     <TextView
         android:id="@+id/basketOrderTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketOrderHumanCount"
-        tools:text="В центре зала"/>
-
+        tools:text="В центре зала" />
 
     <Button
         android:id="@+id/basketOrderTableMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/button_selector_3"
         android:fontFamily="sans-serif-medium"
         android:text="@string/basket_order_table_count_input"
         android:textColor="@color/whitegold"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/basketOrderHumanCountMenu" />
-
-    <Button
-        android:id="@+id/basketOrderClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button_selector_3"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/basket_order_clock"
-        android:textColor="@color/whitegold"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/basketOrderTableMenu" />
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderTable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/basketOrderTable" />
 
 
     <TextView
         android:id="@+id/basketOrderClockNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:layout_marginStart="20dp"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/basketOrderClock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basketOrderTable"
+        tools:text="13:34" />
+
+    <Button
+        android:id="@+id/basketOrderClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/button_selector_3"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/basket_order_clock"
+        android:textColor="@color/whitegold"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderClockNum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/basketOrderClock"
-        tools:text="13:34"/>
+        app:layout_constraintTop_toTopOf="@+id/basketOrderClockNum" />
+
 
     <TextView
         android:id="@+id/basketOrderSum"
@@ -107,12 +108,12 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        tools:text="@string/basket_order_sum"
         android:fontFamily="sans-serif-black"
         android:textSize="19sp"
         app:layout_constraintBottom_toTopOf="@+id/orderButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/basket_order_sum" />
 
     <Button
         android:id="@+id/orderButton"
@@ -128,8 +129,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

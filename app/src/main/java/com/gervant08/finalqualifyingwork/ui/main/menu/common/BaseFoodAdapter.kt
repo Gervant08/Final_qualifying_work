@@ -97,7 +97,7 @@ abstract class BaseFoodAdapter<T : Any>(val listener: OnItemClickListener<T>) :
             override fun onBind(data: MenuItem, listener: OnItemClickListener<MenuItem>?) {
                 menuItemImage.setImageResource(data.imageResource)
                 menuItemTitle.text = data.title
-                menuItemPrice.text = ("Цена: ${data.price} руб. ${weightOrVolume(data.scalar)}")
+                menuItemPrice.text = ("Цена: ${data.price} ₽ ${weightOrVolume(data.scalar)}")
                 itemView.setOnClickListener { listener?.onClickItem(data) }
             }
         }

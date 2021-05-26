@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/smoke_gray">
+    android:background="@color/smoke_gray"
+    android:animateLayoutChanges="true">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,7 +43,7 @@
         android:background="@drawable/button_selector"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Оформить заказ"
+        android:text="@string/basket_order_button_order_text_2"
         android:textColor="@color/whitegold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"

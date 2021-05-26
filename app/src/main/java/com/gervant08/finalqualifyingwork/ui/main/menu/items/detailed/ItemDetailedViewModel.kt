@@ -31,8 +31,8 @@ class ItemDetailedViewModel: ViewModel() {
 
     fun weightOrVolume(scalar: String): String{
         return if (scalar.contains("гр", true))
-            "Вес: $scalar"
+            " Вес: $scalar"
         else
-            "Объем: $scalar"
+            " Объем: $scalar"
     }
 }

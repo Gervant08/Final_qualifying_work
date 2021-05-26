@@ -36,7 +36,7 @@ class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
     private fun initViews() {
         imageView.setImageResource(selectedMenuItem.imageResource)
         titleTextView.text = selectedMenuItem.title
-        priceTextView.text = ("Цена: ${selectedMenuItem.price}")
+        priceTextView.text = ("Цена: ${selectedMenuItem.price}" + " ₽")
         weightTextView.text = viewModel.weightOrVolume(selectedMenuItem.scalar)
         descriptionTextView.text = selectedMenuItem.description
         addButton.setOnClickListener { viewModel.addMenuItemInBasket(selectedMenuItem) }
