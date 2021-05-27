@@ -14,13 +14,25 @@
 
         <action
             android:id="@+id/action_home_fragment_to_basket_fragment2"
-            app:destination="@id/basket_fragment" />
+            app:destination="@id/basket_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
             android:id="@+id/action_home_fragment_to_profile_fragment"
-            app:destination="@id/profile_fragment" />
+            app:destination="@id/profile_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
             android:id="@+id/action_home_fragment_to_itemsFragment"
-            app:destination="@id/itemsFragment" />
+            app:destination="@id/itemsFragment"
+            app:enterAnim="@anim/screen_slide_in_right_anim"
+            app:exitAnim="@anim/screen_slide_out_left_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
     </fragment>
 
     <fragment
@@ -31,13 +43,25 @@
 
         <action
             android:id="@+id/action_basket_fragment_to_profile_fragment2"
-            app:destination="@id/profile_fragment" />
+            app:destination="@id/profile_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
             android:id="@+id/action_basket_fragment_to_home_fragment2"
-            app:destination="@id/home_fragment" />
+            app:destination="@id/home_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
             android:id="@+id/action_basket_fragment_to_orderFragment"
-            app:destination="@id/orderFragment" />
+            app:destination="@id/orderFragment"
+            app:enterAnim="@anim/screen_slide_in_right_anim"
+            app:exitAnim="@anim/screen_slide_out_left_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
     </fragment>
 
     <fragment
@@ -48,10 +72,18 @@
 
         <action
             android:id="@+id/action_profile_fragment_to_basket_fragment2"
-            app:destination="@id/basket_fragment" />
+            app:destination="@id/basket_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
             android:id="@+id/action_profile_fragment_to_home_fragment2"
-            app:destination="@id/home_fragment" />
+            app:destination="@id/home_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_alpha_scale_anim"
+            app:popExitAnim="@anim/screen_alpha_scale_anim" />
     </fragment>
     <fragment
         android:id="@+id/itemsFragment"
@@ -59,10 +91,18 @@
         android:label="ItemsFragment" >
         <action
             android:id="@+id/action_itemsFragment_to_itemDetailedFragment"
-            app:destination="@id/itemDetailedFragment" />
+            app:destination="@id/itemDetailedFragment"
+            app:enterAnim="@anim/screen_slide_in_right_anim"
+            app:exitAnim="@anim/screen_slide_out_left_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
         <action
             android:id="@+id/action_itemsFragment_to_home_fragment"
-            app:destination="@id/home_fragment" />
+            app:destination="@id/home_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
     </fragment>
     <fragment
         android:id="@+id/itemDetailedFragment"
@@ -70,10 +110,18 @@
         android:label="ItemDetailedFragment" >
         <action
             android:id="@+id/action_itemDetailedFragment_to_itemsFragment"
-            app:destination="@id/itemsFragment" />
+            app:destination="@id/itemsFragment"
+            app:enterAnim="@anim/screen_slide_in_right_anim"
+            app:exitAnim="@anim/screen_slide_out_left_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
         <action
             android:id="@+id/action_itemDetailedFragment_to_basket_fragment"
-            app:destination="@id/basket_fragment" />
+            app:destination="@id/basket_fragment"
+            app:enterAnim="@anim/screen_alpha_scale_anim"
+            app:exitAnim="@anim/screen_alpha_scale_anim"
+            app:popEnterAnim="@anim/screen_slide_in_left_anim"
+            app:popExitAnim="@anim/screen_slide_out_right_anim" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
