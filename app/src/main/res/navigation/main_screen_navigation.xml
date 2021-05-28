@@ -4,30 +4,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools = "http://schemas.android.com/tools"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/menu_fragment">
 
     <fragment
-        android:id = "@+id/home_fragment"
+        android:id = "@+id/menu_fragment"
         android:name = "com.gervant08.finalqualifyingwork.ui.main.menu.MenuFragment"
         tools:layout = "@layout/fragment_menu">
 
 
         <action
-            android:id="@+id/action_home_fragment_to_basket_fragment2"
+            android:id="@+id/action_menu_fragment_to_basket_fragment2"
             app:destination="@id/basket_fragment"
             app:enterAnim="@anim/screen_alpha_scale_anim"
             app:exitAnim="@anim/screen_alpha_scale_anim"
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
             app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
-            android:id="@+id/action_home_fragment_to_profile_fragment"
+            android:id="@+id/action_menu_fragment_to_profile_fragment"
             app:destination="@id/profile_fragment"
             app:enterAnim="@anim/screen_alpha_scale_anim"
             app:exitAnim="@anim/screen_alpha_scale_anim"
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
             app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
-            android:id="@+id/action_home_fragment_to_itemsFragment"
+            android:id="@+id/action_menu_fragment_to_itemsFragment"
             app:destination="@id/itemsFragment"
             app:enterAnim="@anim/screen_slide_in_right_anim"
             app:exitAnim="@anim/screen_slide_out_left_anim"
@@ -49,8 +49,8 @@
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
             app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
-            android:id="@+id/action_basket_fragment_to_home_fragment2"
-            app:destination="@id/home_fragment"
+            android:id="@+id/action_basket_fragment_to_menu_fragment2"
+            app:destination="@id/menu_fragment"
             app:enterAnim="@anim/screen_alpha_scale_anim"
             app:exitAnim="@anim/screen_alpha_scale_anim"
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
@@ -78,8 +78,8 @@
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
             app:popExitAnim="@anim/screen_alpha_scale_anim" />
         <action
-            android:id="@+id/action_profile_fragment_to_home_fragment2"
-            app:destination="@id/home_fragment"
+            android:id="@+id/action_profile_fragment_to_menu_fragment2"
+            app:destination="@id/menu_fragment"
             app:enterAnim="@anim/screen_alpha_scale_anim"
             app:exitAnim="@anim/screen_alpha_scale_anim"
             app:popEnterAnim="@anim/screen_alpha_scale_anim"
@@ -97,8 +97,8 @@
             app:popEnterAnim="@anim/screen_slide_in_left_anim"
             app:popExitAnim="@anim/screen_slide_out_right_anim" />
         <action
-            android:id="@+id/action_itemsFragment_to_home_fragment"
-            app:destination="@id/home_fragment"
+            android:id="@+id/action_itemsFragment_to_menu_fragment"
+            app:destination="@id/menu_fragment"
             app:enterAnim="@anim/screen_alpha_scale_anim"
             app:exitAnim="@anim/screen_alpha_scale_anim"
             app:popEnterAnim="@anim/screen_slide_in_left_anim"

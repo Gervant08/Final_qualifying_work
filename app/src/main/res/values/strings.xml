@@ -34,5 +34,8 @@
     <string name="basket_dish_amount">Итого:</string>
     <string name="basket_item_count_text">1</string>
     <string name="profile_telephone">телефон</string>
+    <string name="nav_item_menu_title">Menu</string>
+    <string name="nav_item_basket_title">Basket</string>
+    <string name="nav_item_profile_title">Profile</string>
 
 </resources>
