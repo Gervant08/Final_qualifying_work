@@ -7,13 +7,14 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
+import com.gervant08.finalqualifyingwork.model.tools.DishesDiffUtil
 
 class BasketAdapter(
     private val deleteListener: (basketItem: BasketItem) -> Unit,
-    private val changeAmountListener: (dishesList: ArrayList<BasketItem>) -> Unit
 ) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
     private var dishesList: ArrayList<BasketItem> = arrayListOf()
 
@@ -29,8 +30,13 @@ class BasketAdapter(
     override fun getItemCount(): Int = dishesList.size
 
     fun updateDishesList(dishesList: ArrayList<BasketItem>) {
-        this.dishesList = dishesList
-        notifyDataSetChanged()
+        val diffUtil = DishesDiffUtil(this.dishesList, dishesList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        with(this.dishesList){
+            clear()
+            addAll(dishesList)
+        }
+        diffResult.dispatchUpdatesTo(this)
     }
 
     fun getDishesList() = dishesList
@@ -47,13 +53,13 @@ class BasketAdapter(
             itemView.findViewById(R.id.basketItemDeleteButton)
 
         fun plus(basketItem: BasketItem) {
-            changeAmountListener(dishesList)
+            basketItem.count += 1
             basketItemCount.text = ("${basketItem.count}")
             basketItemPrice.text = ("${basketItem.price * basketItem.count} руб.")
         }
 
         fun minus(basketItem: BasketItem) {
-            changeAmountListener(dishesList)
+            basketItem.count -= 1
 
             if (basketItem.count == 0) {
                 deleteListener(basketItem)
@@ -69,8 +75,8 @@ class BasketAdapter(
             basketItemTitle.text = basketItem.title
             basketItemPrice.text = (basketItem.price * basketItem.count).toString()
             basketItemCount.text = basketItem.count.toString()
-            basketItemMinusButton.setOnClickListener { basketItem.count -= 1; minus(basketItem) }
-            basketItemPlusButton.setOnClickListener { basketItem.count += 1; plus(basketItem) }
+            basketItemMinusButton.setOnClickListener { minus(basketItem) }
+            basketItemPlusButton.setOnClickListener { plus(basketItem) }
             basketItemDeleteButton.setOnClickListener { deleteListener(basketItem) }
         }
     }

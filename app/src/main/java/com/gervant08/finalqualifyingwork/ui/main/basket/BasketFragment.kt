@@ -8,18 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SimpleItemAnimator
 import com.gervant08.finalqualifyingwork.model.data.MenuBasket
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.tools.BasketItemAnimator
 
 class BasketFragment : Fragment(R.layout.fragment_basket) {
-    private lateinit var basketRecyclerView: RecyclerView
-    private val basketViewModel: BasketViewModel by viewModels()
+    private lateinit var recyclerView: RecyclerView
+    private val viewModel: BasketViewModel by viewModels()
     private lateinit var orderButton: Button
     private lateinit var orderAmountTextView: TextView
-    private val basketAdapter =
-        BasketAdapter({ basketItem ->  deleteItemFromBasket(basketItem)},
-            { newDishesList ->  updateOrderAmount(newDishesList)})
+    private val itemAnimator = BasketItemAnimator()
+    private val adapter =
+        BasketAdapter { basketItem ->  deleteItemFromBasket(basketItem)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,16 +31,17 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        basketRecyclerView = view.findViewById(R.id.rvBasketItems)
-        basketRecyclerView.adapter = basketAdapter
+        recyclerView = view.findViewById(R.id.rvBasketItems)
+        recyclerView.adapter = adapter
+        recyclerView.itemAnimator = itemAnimator
         orderButton = view.findViewById(R.id.basketOrderButton)
         orderButton.setOnClickListener { goToOrderPage() }
         orderAmountTextView = view.findViewById(R.id.basketOrderAmount)
-        orderAmountTextView.text = basketViewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
+        orderAmountTextView.text = viewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
     }
 
     private fun initBasketDishesList() {
-        basketAdapter.updateDishesList(MenuBasket.dishesList.value!!)
+        adapter.updateDishesList(MenuBasket.dishesList.value!!)
     }
 
     private fun goToOrderPage() {
@@ -48,17 +51,12 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
     }
 
     private fun deleteItemFromBasket(basketItem: BasketItem){
-        basketViewModel.deleteItemFromBasket(basketItem)
-        orderAmountTextView.text = basketViewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
+        viewModel.deleteItemFromBasket(basketItem)
+        orderAmountTextView.text = viewModel.calculatingOrderAmount(MenuBasket.dishesList.value!!).toString()
     }
 
     private fun onDishesInBasketChange(dishesList: ArrayList<BasketItem>) {
-        basketAdapter.updateDishesList(dishesList)
-    }
-
-    private fun updateOrderAmount(basketItemsList: ArrayList<BasketItem>){
-        MenuBasket.dishesList.value = basketItemsList
-        orderAmountTextView.text = basketViewModel.calculatingOrderAmount(basketItemsList).toString()
+        adapter.updateDishesList(dishesList)
     }
 
 
