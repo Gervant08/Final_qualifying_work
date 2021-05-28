@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
@@ -68,7 +69,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun onMenuCategorySelected(menuCategory: MenuCategory) {
-        navHostFragment.navController.navigate(R.id.action_menu_fragment_to_itemsFragment)
+        navHostFragment.navController.navigate(R.id.action_home_fragment_to_itemsFragment)
     }
 
     private fun onMenuItemSelected(menuItem: MenuItem) {
