@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.SimpleItemAnimator
 import com.gervant08.finalqualifyingwork.model.data.MenuBasket
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
@@ -21,7 +20,8 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
     private lateinit var orderAmountTextView: TextView
     private val itemAnimator = BasketItemAnimator()
     private val adapter =
-        BasketAdapter { basketItem ->  deleteItemFromBasket(basketItem)}
+        BasketAdapter ({ basketItem ->  deleteItemFromBasket(basketItem)},
+            {newDishesList -> calculatingOrderAmount(newDishesList)})
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +57,10 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
     private fun onDishesInBasketChange(dishesList: ArrayList<BasketItem>) {
         adapter.updateDishesList(dishesList)
+    }
+
+    private fun calculatingOrderAmount(newDishesList: ArrayList<BasketItem>) {
+        orderAmountTextView.text = viewModel.calculatingOrderAmount(newDishesList).toString()
     }
 
 

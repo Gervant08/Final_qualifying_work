@@ -107,17 +107,18 @@ class OrderFragment: Fragment(R.layout.fragment_basket_order) {
         val channel = NotificationChannel(OrderNotification.CHANNEL_ID, name, importance).apply {
             description = descriptionText
         }
-        val notificationManager: NotificationManager = activity!!.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager: NotificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
 
     private fun isOrderReadyToCreated(): Boolean =
-         (basketOrderHumanCount.text.length != 0
-            && basketOrderTable.text.length != 0
-            && basketOrderClockNum.text.length != 0)
+         (basketOrderHumanCount.text.isNotEmpty()
+            && basketOrderTable.text.isNotEmpty()
+            && basketOrderClockNum.text.isNotEmpty())
 
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun makeOrder(){
         var orderDescription = viewModel.createTextForDialogFragment(isOrderReadyToCreated())
         val manager = childFragmentManager

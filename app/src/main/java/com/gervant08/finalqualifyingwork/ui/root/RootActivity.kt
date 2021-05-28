@@ -2,6 +2,7 @@ package com.gervant08.finalqualifyingwork.ui.root
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.app.MyApp

@@ -15,6 +15,7 @@ import com.gervant08.finalqualifyingwork.model.tools.DishesDiffUtil
 
 class BasketAdapter(
     private val deleteListener: (basketItem: BasketItem) -> Unit,
+    private val changeNumberOfDishesListener: (ArrayList<BasketItem>) -> Unit
 ) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
     private var dishesList: ArrayList<BasketItem> = arrayListOf()
 
@@ -54,13 +55,14 @@ class BasketAdapter(
 
         fun plus(basketItem: BasketItem) {
             basketItem.count += 1
+            changeNumberOfDishesListener(dishesList)
             basketItemCount.text = ("${basketItem.count}")
             basketItemPrice.text = ("${basketItem.price * basketItem.count} руб.")
         }
 
         fun minus(basketItem: BasketItem) {
             basketItem.count -= 1
-
+            changeNumberOfDishesListener(dishesList)
             if (basketItem.count == 0) {
                 deleteListener(basketItem)
                 return
