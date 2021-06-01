@@ -116,6 +116,10 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
             true
         ).show()
 
+        createDialog("Выбор времени заказа" to
+                "Заказ может быть сделан с 10:00 до 22:00. Заказ нужно сделать минимум за час до прибытия в ресторан"
+        )
+
     }
 
     private fun isOrderTimeCorrect(orderTime: Int): Boolean {
