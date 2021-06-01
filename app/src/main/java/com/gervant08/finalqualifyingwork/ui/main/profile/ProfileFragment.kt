@@ -8,11 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import com.gervant08.finalqualifyingwork.model.data.User
 import com.gervant08.finalqualifyingwork.model.tools.FireBaseAuthentication
-import com.gervant08.finalqualifyingwork.model.tools.OrderNotification
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

@@ -11,14 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.model.data.MenuBasket
 import com.gervant08.finalqualifyingwork.model.data.BasketItem
 import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
-import com.gervant08.finalqualifyingwork.model.tools.BasketItemAnimator
 
 class BasketFragment : Fragment(R.layout.fragment_basket) {
     private lateinit var recyclerView: RecyclerView
     private val viewModel: BasketViewModel by viewModels()
     private lateinit var orderButton: Button
     private lateinit var orderAmountTextView: TextView
-    private val itemAnimator = BasketItemAnimator()
     private val adapter =
         BasketAdapter ({ basketItem ->  deleteItemFromBasket(basketItem)},
             {newDishesList -> calculatingOrderAmount(newDishesList)})
@@ -33,7 +31,6 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvBasketItems)
         recyclerView.adapter = adapter
-        recyclerView.itemAnimator = itemAnimator
         orderButton = view.findViewById(R.id.basketOrderButton)
         orderButton.setOnClickListener { goToOrderPage() }
         orderAmountTextView = view.findViewById(R.id.basketOrderAmount)

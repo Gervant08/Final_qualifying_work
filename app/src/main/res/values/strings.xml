@@ -35,4 +35,8 @@
     <string name="basket_item_count_text">1</string>
     <string name="profile_telephone">телефон</string>
 
+    <string name="notification_title">Ваш заказ скоро будет готов</string>
+    <string name="notification_subtitle">Через 30 минут ваш заказ будет готов. Приходите, мы вас ждем</string>
+
+
 </resources>
