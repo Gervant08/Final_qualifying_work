@@ -12,7 +12,7 @@ class MenuFragment : BaseFoodFragment<MenuViewModel, MenuCategory>(R.layout.frag
     override fun getViewModel(): Class<MenuViewModel> = MenuViewModel::class.java
 
     override fun getJsonMenuParser(): JsonMenuParser =
-        JsonMenuParser.getInstance(requireContext())
+        JsonMenuParser(requireContext())
 
     override fun initListInAdapter() {
         adapter.updateItemsList(viewModel.getMenuCategories())

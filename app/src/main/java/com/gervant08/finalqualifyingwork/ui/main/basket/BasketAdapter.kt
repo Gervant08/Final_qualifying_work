@@ -57,7 +57,7 @@ class BasketAdapter(
             basketItem.count += 1
             changeNumberOfDishesListener(dishesList)
             basketItemCount.text = ("${basketItem.count}")
-            basketItemPrice.text = ("${basketItem.price * basketItem.count} руб.")
+            basketItemPrice.text = ("${basketItem.price * basketItem.count} ₽.")
         }
 
         fun minus(basketItem: BasketItem) {
@@ -69,13 +69,13 @@ class BasketAdapter(
             }
 
             basketItemCount.text = ("${basketItem.count}")
-            basketItemPrice.text = ("${basketItem.price * basketItem.count} руб.")
+            basketItemPrice.text = ("${basketItem.price * basketItem.count} ₽.")
         }
 
         fun onBind(basketItem: BasketItem) {
             basketItemImage.setImageResource(basketItem.imageResource)
             basketItemTitle.text = basketItem.title
-            basketItemPrice.text = (basketItem.price * basketItem.count).toString()
+            basketItemPrice.text = ("${(basketItem.price * basketItem.count)} ₽")
             basketItemCount.text = basketItem.count.toString()
             basketItemMinusButton.setOnClickListener { minus(basketItem) }
             basketItemPlusButton.setOnClickListener { plus(basketItem) }

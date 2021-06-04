@@ -8,9 +8,9 @@ import com.gervant08.finalqualifyingwork.model.tools.FireBaseAuthentication
 class RegistrationViewModel : ViewModel() {
     private val fireBaseAuthentication = FireBaseAuthentication()
 
-    fun registration(email: String, password: String) {
+    fun registration(email: String, password: String, userName: String, userLastName: String) {
         CurrentUser.user = User(email, password)
-        fireBaseAuthentication.registration(email, password)
+        fireBaseAuthentication.registration(email, password, userName, userLastName)
 
     }
 }

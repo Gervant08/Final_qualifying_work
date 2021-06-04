@@ -10,17 +10,6 @@ import java.io.IOException
 class JsonMenuParser(private val context: Context) {
 
     companion object {
-        private var INSTANCE: JsonMenuParser? = null
-        fun getInstance(context: Context): JsonMenuParser {
-            return if (INSTANCE == null) {
-                INSTANCE = JsonMenuParser(context)
-                INSTANCE!!
-            } else {
-                INSTANCE!!
-            }
-
-        }
-
         private const val FILE_NAME = "menu.json"
         private const val ITEM_TITLE = "title"
         private const val ITEM_DESCRIPTION = "description"

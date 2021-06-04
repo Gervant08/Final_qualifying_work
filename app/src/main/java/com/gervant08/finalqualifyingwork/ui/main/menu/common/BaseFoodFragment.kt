@@ -10,11 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 
-abstract class BaseFoodFragment<VM: ViewModel, IT: Any>(private val fragmentId: Int) : Fragment(fragmentId) {
+abstract class BaseFoodFragment<VM: ViewModel, IT: Any>(fragmentId: Int) : Fragment(fragmentId) {
 
     protected lateinit var viewModel: VM
     protected lateinit var adapter: BaseFoodAdapter<IT>
-    protected lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

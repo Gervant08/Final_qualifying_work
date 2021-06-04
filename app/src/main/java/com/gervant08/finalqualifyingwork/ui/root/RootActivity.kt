@@ -21,7 +21,6 @@ class RootActivity : AppCompatActivity() {
         NavigateLiveData.loggedUserLiveData.observe(this, this::goToMainScreen)
 
     }
-
     private fun goToMainScreen(isLogged: Boolean) {
         if (isLogged)
             navigateTo(R.id.main_fragment)

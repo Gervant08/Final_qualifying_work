@@ -56,6 +56,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 phone.isEnabled = true
             }
             ProfileState.EDIT -> {
+                updateUserInfo()
                 state = ProfileState.SAVE
                 name.isEnabled = false
                 lastName.isEnabled = false
@@ -72,7 +73,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)
-                    Toast.makeText(requireContext(), "НАКОНЕЦ-ТО КАК Я УЖЕ ЗАЕБАЛСЯ", Toast.LENGTH_SHORT).show()
                     name.setText(user!!.name, TextView.BufferType.EDITABLE)
                     lastName.setText(user.lastname, TextView.BufferType.EDITABLE)
                 }
@@ -84,6 +84,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 }
 
             })
+    }
+
+    private fun updateUserInfo(){
 
     }
 

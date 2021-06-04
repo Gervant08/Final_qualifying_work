@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_auth.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_basket.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_basket_order.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_login_page.xml" value="0.35280797101449274" />
       </map>
     </option>
   </component>
