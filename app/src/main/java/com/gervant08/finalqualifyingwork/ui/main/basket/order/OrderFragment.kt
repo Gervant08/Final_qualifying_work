@@ -1,31 +1,19 @@
 package com.gervant08.finalqualifyingwork.ui.main.basket.order
 
 import android.app.*
-import android.content.Context
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.text.format.DateFormat.is24HourFormat
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.tools.OrderNotificationReceiver
-import com.gervant08.finalqualifyingwork.model.tools.OrderNotificationReceiver.Companion.CHANNEL_ID
-import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.timepicker.MaterialTimePicker
-import com.google.android.material.timepicker.TimeFormat
-import java.lang.String.valueOf
+import com.gervant08.finalqualifyingwork.model.tools.OrderNotification
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.time.ExperimentalTime
-import kotlin.time.hours
 
 class OrderFragment : Fragment(R.layout.fragment_basket_order) {
     private val viewModel: OrderViewModel by viewModels()
@@ -40,14 +28,14 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
     private lateinit var basketOrderClock: Button
     private lateinit var orderButton: Button
     private lateinit var orderDialogFragment: OrderDialogFragment
+    private lateinit var orderNotification: OrderNotification
     private var orderTime: String = ""
     private val calendar = Calendar.getInstance()
+
 
     companion object {
         const val POPUP_TABLE: Int = R.menu.popup_table_menu
         const val POPUP_HUMAN: Int = R.menu.popup_human_count_menu
-        const val MINUTE_30 = 108000
-        const val MINUTE_60 = 216000
         const val TIME_PATTERN = "HH:mm"
     }
 
@@ -106,7 +94,6 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
             }
 
         }
-
         TimePickerDialog(
             context,
             timeSetListener,
@@ -152,26 +139,8 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
 
 
     private fun createOrderNotification() {
-        createNotificationChannel()
-        val intent = Intent(requireContext(), OrderNotificationReceiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, 0)
-        val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val notificationTime: Long = calendar.time.time - MINUTE_30
-        alarmManager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent)
+        orderNotification = OrderNotification(requireContext())
+        orderNotification.createNotification(orderTime)
     }
 
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Name"
-            val descriptionText = "Description"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                description = descriptionText
-            }
-            val notificationManager: NotificationManager =
-                requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
-        }
-
-    }
 }

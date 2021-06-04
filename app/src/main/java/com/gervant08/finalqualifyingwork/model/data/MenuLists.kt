@@ -54,22 +54,22 @@ object MenuLists {
         "Креветки магаданские" to R.drawable.image_item_seafood_magadan_shrimps,
         "Соба с морепродуктами" to R.drawable.image_item_seafood_soba_with_seafood,
 
-        "Игристое вино \"ПРОСЕККО\"" to R.drawable.image_item_alcoholic_prosecco,
-        "Вино \"ЛЕ ГРАН НУАР ПИНО НУАР\"" to R.drawable.image_item_alcoholic_le_grand_pinot_noir,
-        "Виски \"ЧИВАС РИГАЛ 18 ЛЕТ\"" to R.drawable.image_item_alcoholic_chivas_regal_18,
-        "Водка \"ПЯТЬ ОЗЕР ПРЕМИУМ\"" to R.drawable.image_item_alcoholic_5_lakes_premium,
-        "Коктейль \"ДЖИМ РИКИ\"" to R.drawable.image_item_alcoholic_jim_ricky,
+        "Игристое вино \"Просеко\"" to R.drawable.image_item_alcoholic_prosecco,
+        "Вино \"Ле гранд нуар пино\"" to R.drawable.image_item_alcoholic_le_grand_pinot_noir,
+        "Виски \"Чивас регал 18 лет\"" to R.drawable.image_item_alcoholic_chivas_regal_18,
+        "Водка \"Пять озер премиум\"" to R.drawable.image_item_alcoholic_5_lakes_premium,
+        "Коктейль \"Джим Рикки\"" to R.drawable.image_item_alcoholic_jim_ricky,
 
         "Шоколадный коктейль" to R.drawable.image_item_nonalcoholic_chocolate_cocktail,
-        "Коктейль \"МОХИТО\"" to R.drawable.image_item_nonalcoholic_mojito,
+        "Коктейль \"Мохито\"" to R.drawable.image_item_nonalcoholic_mojito,
         "Бананово-шоколадный коктейль" to R.drawable.image_item_nonalcoholic_banana_chocolate_cocktail,
         "Грушевый коктейль с корицей" to R.drawable.image_item_nonalcoholic_pear_cocktail_with_cinnamon,
-        "АПЕЛЬСИНОВЫЙ ЭГ-НОГ" to R.drawable.image_item_nonalcoholic_orange_egg_nog,
+        "Апельсиновый эг-ног" to R.drawable.image_item_nonalcoholic_orange_egg_nog,
 
-        "ПАРМЕЗАН" to R.drawable.image_item_dessert_parmezan,
-        "ТИРАМИСУ" to R.drawable.image_item_dessert_tiramisu,
-        "ЯБЛОЧНЫЙ ШТРУДЕЛЬ" to R.drawable.image_item_dessert_apple_strudel,
-        "ФОНДАН" to R.drawable.image_item_dessert_fondan,
-        "НАПОЛЕОН" to R.drawable.image_item_dessert_napoleon
+        "Пармезан" to R.drawable.image_item_dessert_parmezan,
+        "Тирамису" to R.drawable.image_item_dessert_tiramisu,
+        "Яблочный штрудель" to R.drawable.image_item_dessert_apple_strudel,
+        "Фондан" to R.drawable.image_item_dessert_fondan,
+        "Наполеон" to R.drawable.image_item_dessert_napoleon
     )
 }
