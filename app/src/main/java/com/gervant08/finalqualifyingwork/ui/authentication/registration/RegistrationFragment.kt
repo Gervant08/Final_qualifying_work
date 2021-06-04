@@ -30,10 +30,12 @@ class RegistrationFragment : Fragment(R.layout.fragment_reg_page) {
     }
 
     private fun registration() {
+        val userName = registrationInputName.text.toString().filter { !it.isWhitespace() }
+        val userLastName = registrationInputLastName.text.toString().filter { !it.isWhitespace() }
         val userEmail = registrationInputEmail.text.toString().filter { !it.isWhitespace() }
         val userPassword = registrationInputPassword.text.toString().filter { !it.isWhitespace() }
 
         if (userEmail.isNotEmpty() && userPassword.isNotEmpty())
-            registrationViewModel.registration(userEmail, userPassword)
+            registrationViewModel.registration(userEmail, userPassword, userName, userLastName)
     }
 }

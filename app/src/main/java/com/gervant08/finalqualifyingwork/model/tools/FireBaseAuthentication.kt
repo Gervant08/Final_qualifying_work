@@ -9,10 +9,6 @@ class FireBaseAuthentication {
     val database = FirebaseDatabase.getInstance().getReference("users")
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    companion object{
-        const val USERS = "users"
-    }
-
     fun login(userEmail: String, userPassword: String){
         auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener {
             if (it.isSuccessful) {
@@ -21,10 +17,10 @@ class FireBaseAuthentication {
         }
     }
 
-    fun registration(userEmail: String, userPassword: String){
+    fun registration(userEmail: String, userPassword: String, userName: String, userLastName: String){
         auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener{ completeRegistration ->
             if (completeRegistration.isSuccessful) {
-                val user = User(userEmail, userPassword)
+                val user = User(userName, userLastName)
 
                 database.child(completeRegistration.result!!.user!!.uid).setValue(user).addOnCompleteListener {
                     if (it.isSuccessful){
@@ -33,5 +29,9 @@ class FireBaseAuthentication {
                 }
             }
         }
+    }
+
+    fun updateUserInfo(){
+
     }
 }

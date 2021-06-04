@@ -94,7 +94,6 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
 
     private fun showTimePickerDialog() {
         val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-            calendar.clear()
             calendar.set(Calendar.HOUR_OF_DAY, hour)
             calendar.set(Calendar.MINUTE, minute)
             orderTime = SimpleDateFormat(TIME_PATTERN, Locale.US).format(calendar.time)
@@ -135,10 +134,6 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
         return false
     }
 
-    private fun showToast(toastText: String) {
-        Toast.makeText(requireContext(), toastText, Toast.LENGTH_LONG).show()
-    }
-
     private fun makeOrder() {
         createDialog(viewModel.createTextForDialogFragment(isOrderReadyToCreated()))
         createOrderNotification()
@@ -161,8 +156,7 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
         val intent = Intent(requireContext(), OrderNotificationReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, 0)
         val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val currentTime = System.currentTimeMillis()
-        val notificationTime: Long = currentTime + (calendar.time.time - currentTime) - MINUTE_30
+        val notificationTime: Long = calendar.time.time - MINUTE_30
         alarmManager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent)
     }
 
