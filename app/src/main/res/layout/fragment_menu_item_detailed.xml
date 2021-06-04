@@ -22,10 +22,12 @@
         android:id="@+id/itemDetailedTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="?android:listSeparatorTextViewStyle"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/chocolate"
         android:layout_marginStart="20dp"
-        android:textSize="24sp"
+        android:layout_marginEnd="20dp"
+        android:textSize="21sp"
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedImage"
         tools:text="Мясная закуска" />
 
@@ -35,7 +37,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemDetailedTitle"
         tools:text="Цена: 350 руб. " />

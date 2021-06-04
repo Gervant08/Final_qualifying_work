@@ -28,12 +28,15 @@
     <string name="basket_order_table_option_3">В центре зала</string>
     <string name="basket_order_table_option_4">В конце зала</string>
     <string name="basket_order_clock">Выбрать время</string>
-    <string name="basket_order_sum">Итого: 7800</string>
+    <string name="basket_order_sum">7800</string>
     <string name="basket_minus_button_text">-</string>
     <string name="basket_plus_button_text">+</string>
     <string name="basket_dish_amount">Итого:</string>
     <string name="basket_item_count_text">1</string>
     <string name="profile_telephone">телефон</string>
+    <string name="nav_menu_home">Меню</string>
+    <string name="nav_menu_basket">Корзина</string>
+    <string name="nav_menu_profile">Профиль</string>
 
     <string name="notification_title">Ваш заказ скоро будет готов</string>
     <string name="notification_subtitle">Через 30 минут ваш заказ будет готов. Приходите, мы вас ждем</string>

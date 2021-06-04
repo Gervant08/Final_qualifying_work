@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="20dp"
+    android:layout_marginStart="13dp"
     android:layout_marginTop="12dp"
-    android:layout_marginEnd="20dp"
+    android:layout_marginEnd="13dp"
     android:background="@color/white"
     >
 
     <ImageView
         android:id="@+id/basketItemImage"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,11 +23,12 @@
 
     <TextView
         android:id="@+id/basketItemTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/basketItemImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Сырная тарелка" />
@@ -71,7 +72,7 @@
         android:layout_width="40dp"
         android:layout_height="39dp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/button_selector_2"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
@@ -86,7 +87,7 @@
         android:layout_width="40dp"
         android:layout_height="39dp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/button_selector_2"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
