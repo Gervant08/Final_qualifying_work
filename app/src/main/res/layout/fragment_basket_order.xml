@@ -104,16 +104,26 @@
 
     <TextView
         android:id="@+id/basketOrderSum"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="19sp"
-        app:layout_constraintBottom_toTopOf="@+id/orderButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/basketOrderNameSum"
+        app:layout_constraintStart_toEndOf="@+id/basketOrderNameSum"
+        app:layout_constraintTop_toTopOf="@+id/basketOrderNameSum"
         tools:text="@string/basket_order_sum" />
+
+    <TextView
+        android:id="@+id/basketOrderNameSum"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/orderButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/basket_order_name_sum" />
 
     <Button
         android:id="@+id/orderButton"

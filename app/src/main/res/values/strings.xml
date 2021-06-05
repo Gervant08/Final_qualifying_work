@@ -37,6 +37,7 @@
     <string name="nav_menu_home">Меню</string>
     <string name="nav_menu_basket">Корзина</string>
     <string name="nav_menu_profile">Профиль</string>
+    <string name="basket_order_name_sum">Итого:</string>
 
     <string name="notification_title">Ваш заказ скоро будет готов</string>
     <string name="notification_subtitle">Через 30 минут ваш заказ будет готов. Приходите, мы вас ждем</string>
