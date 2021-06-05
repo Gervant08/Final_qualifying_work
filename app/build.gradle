@@ -10,7 +10,7 @@ apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "com.gervant08.finalqualifyingwork"
@@ -61,7 +61,7 @@ dependencies {
     implementation "com.google.firebase:firebase-storage:20.0.0"
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-database:20.0.0'
-    implementation 'com.google.firebase:firebase-firestore:23.0.0'
+    implementation 'com.google.firebase:firebase-firestore:23.0.1'
     /*Firebase*/
 
     /*Navigation*/
@@ -74,7 +74,7 @@ dependencies {
     /*Navigation*/
 
     /*WorkManager*/
-    implementation"androidx.work:work-runtime-ktx:2.6.0-alpha02"
+    implementation 'androidx.work:work-runtime-ktx:2.7.0-alpha04'
     /*WorkManager*/
 
 

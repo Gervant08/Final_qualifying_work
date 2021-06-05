@@ -11,7 +11,7 @@ import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 
 class RootActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
-    private val jsonMenuParser = JsonMenuParser.getInstance(MyApp.applicationContext)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

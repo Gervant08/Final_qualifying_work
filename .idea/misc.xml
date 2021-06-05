@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LUCIS/StudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_basket.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/LUCIS/StudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_main.xml" value="0.2068965449202786" />
         <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_auth.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/NikitaFrankov/AndroidStudioProjects/Final_qualifying_work/app/src/main/res/layout/fragment_basket.xml" value="0.35280797101449274" />
@@ -11,5 +13,5 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="15" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" default="false" project-jdk-name="15" project-jdk-type="JavaSDK" />
 </project>

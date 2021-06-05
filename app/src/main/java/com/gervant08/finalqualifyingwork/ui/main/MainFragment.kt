@@ -20,9 +20,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var navHostFragment: NavHostFragment
 
     companion object {
-        const val ITEM_HOME = "Home"
-        const val ITEM_BASKET = "Basket"
-        const val ITEM_PROFILE = "Profile"
+        const val ITEM_HOME = "Меню"
+        const val ITEM_BASKET = "Корзина"
+        const val ITEM_PROFILE = "Профиль"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
