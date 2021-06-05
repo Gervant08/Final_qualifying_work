@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,14 +11,13 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginBottom="447dp"
-
         android:hint="@string/login_page_login"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -29,14 +27,13 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
-
         android:hint="@string/login_page_password"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,14 +44,12 @@
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginBottom="312dp"
-
         android:background="@drawable/button_selector_2"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/login_page_button_login"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -65,14 +60,12 @@
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginTop="34dp"
-
         android:background="@drawable/button_selector"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/login_page_button_registration"
         android:textColor="@color/whitegold"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +78,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="2.5dp"
         android:fontFamily="sans-serif"
-        android:textSize="11dp"
+        android:textSize="11sp"
         android:text="@string/login_page_have_no_account"
         android:textColor="@color/chocolate_pale_57"
         app:layout_constraintBottom_toTopOf="@+id/login_button_registration"

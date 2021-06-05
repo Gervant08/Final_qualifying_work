@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,14 +10,12 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginBottom="507dp"
-
         android:hint="@string/registration_page_name"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -28,14 +25,12 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
-
         android:hint="@string/registration_page_last_name"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationInputName" />
@@ -45,14 +40,13 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
-
         android:hint="@string/registration_page_mail"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationInputLastName" />
@@ -62,14 +56,12 @@
         android:layout_width="267dp"
         android:layout_height="47dp"
         android:layout_marginTop="13dp"
-
         android:hint="@string/registration_page_create_password"
         android:paddingStart="12dp"
         android:paddingBottom="8dp"
         android:textColor="@color/chocolate"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:backgroundTint="@color/chocolate"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationInputEmail" />
@@ -79,14 +71,12 @@
         android:layout_width="286dp"
         android:layout_height="36dp"
         android:layout_marginBottom="242dp"
-
         android:background="@drawable/button_selector"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/registration_page_button_registration"
         android:textColor="@color/whitegold"
-        android:textSize="13dp"
-
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
