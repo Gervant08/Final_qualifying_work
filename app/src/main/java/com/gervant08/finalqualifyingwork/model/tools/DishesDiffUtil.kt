@@ -1,7 +1,7 @@
 package com.gervant08.finalqualifyingwork.model.tools
 
 import androidx.recyclerview.widget.DiffUtil
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
 
 class DishesDiffUtil(
     private val oldList: ArrayList<BasketItem>,

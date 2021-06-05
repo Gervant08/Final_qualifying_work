@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
 import androidx.recyclerview.widget.RecyclerView
-import com.gervant08.finalqualifyingwork.model.data.MenuBasket
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuBasket
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 
 class BasketFragment : Fragment(R.layout.fragment_basket) {
     private lateinit var recyclerView: RecyclerView
@@ -43,7 +43,7 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
     private fun goToOrderPage() {
         if (MenuBasket.dishesList.value!!.size > 0){
-            NavigateLiveData.filledBasketLiveData.value = true
+            NavigationLiveData.filledBasketLiveData.value = true
         }
     }
 

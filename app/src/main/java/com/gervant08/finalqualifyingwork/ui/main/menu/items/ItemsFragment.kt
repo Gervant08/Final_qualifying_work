@@ -1,8 +1,8 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu.items
 
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodAdapter
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodFragment
@@ -16,7 +16,7 @@ class ItemsFragment : BaseFoodFragment<ItemsViewModel, MenuItem>(R.layout.fragme
         JsonMenuParser(requireContext())
 
     override fun initListInAdapter() {
-        adapter.updateItemsList(viewModel.getItemsListByCategory(NavigateLiveData.selectedCategoryLiveData.value!!.title))
+        adapter.updateItemsList(viewModel.getItemsListByCategory(NavigationLiveData.selectedCategoryLiveData.value!!.title))
     }
 
     override fun initAdapter() {

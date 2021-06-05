@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 
 class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
     private val viewModel: ItemDetailedViewModel by viewModels()
@@ -18,7 +18,7 @@ class ItemDetailedFragment : Fragment(R.layout.fragment_menu_item_detailed) {
     private lateinit var weightTextView: TextView
     private lateinit var descriptionTextView: TextView
     private lateinit var addButton: Button
-    private val selectedMenuItem = NavigateLiveData.selectedMenuItemLiveData.value!!
+    private val selectedMenuItem = NavigationLiveData.selectedMenuItemLiveData.value!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

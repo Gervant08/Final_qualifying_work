@@ -1,8 +1,8 @@
 package com.gervant08.finalqualifyingwork.model.tools
 
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 import com.google.firebase.auth.FirebaseAuth
-import com.gervant08.finalqualifyingwork.model.data.User
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.User
 import com.google.firebase.database.*
 
 class FireBaseAuthentication {
@@ -12,7 +12,7 @@ class FireBaseAuthentication {
     fun login(userEmail: String, userPassword: String){
         auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener {
             if (it.isSuccessful) {
-                NavigateLiveData.loggedUserLiveData.value = true
+                NavigationLiveData.loggedUserLiveData.value = true
             }
         }
     }
@@ -21,10 +21,9 @@ class FireBaseAuthentication {
         auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener{ completeRegistration ->
             if (completeRegistration.isSuccessful) {
                 val user = User(userName, userLastName)
-
                 database.child(completeRegistration.result!!.user!!.uid).setValue(user).addOnCompleteListener {
                     if (it.isSuccessful){
-                        NavigateLiveData.loggedUserLiveData.value = true
+                        NavigationLiveData.loggedUserLiveData.value = true
                     }
                 }
             }

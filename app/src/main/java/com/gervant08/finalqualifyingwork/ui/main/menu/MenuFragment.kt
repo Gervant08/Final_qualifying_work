@@ -1,7 +1,7 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu
 
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.MenuCategory
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuCategory
 import com.gervant08.finalqualifyingwork.model.tools.JsonMenuParser
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodAdapter
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodFragment

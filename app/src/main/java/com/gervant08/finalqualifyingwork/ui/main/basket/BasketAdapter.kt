@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
 import com.gervant08.finalqualifyingwork.model.tools.DishesDiffUtil
 
 class BasketAdapter(

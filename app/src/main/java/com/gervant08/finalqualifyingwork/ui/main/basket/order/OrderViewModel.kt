@@ -2,7 +2,7 @@ package com.gervant08.finalqualifyingwork.ui.main.basket.order
 
 import androidx.lifecycle.ViewModel
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.MenuBasket
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuBasket
 
 class OrderViewModel : ViewModel() {
     companion object {

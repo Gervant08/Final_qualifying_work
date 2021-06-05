@@ -1,4 +1,4 @@
-package com.gervant08.finalqualifyingwork.model.data
+package com.gervant08.finalqualifyingwork.model.data.dataclasses
 
 data class User(
     var name: String = "",

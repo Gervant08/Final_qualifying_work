@@ -1,9 +1,9 @@
 package com.gervant08.finalqualifyingwork.model.tools
 
 import android.content.Context
-import com.gervant08.finalqualifyingwork.model.data.MenuCategory
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
-import com.gervant08.finalqualifyingwork.model.data.MenuLists
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuCategory
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuLists
 import org.json.JSONObject
 import java.io.IOException
 

@@ -1,10 +1,10 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu.items.detailed
 
 import androidx.lifecycle.ViewModel
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
-import com.gervant08.finalqualifyingwork.model.data.MenuBasket
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuBasket
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 
 class ItemDetailedViewModel: ViewModel() {
 
@@ -26,7 +26,7 @@ class ItemDetailedViewModel: ViewModel() {
             MenuBasket.dishesList.value = newList
         }
 
-        NavigateLiveData.selectedMenuItemInBasketLiveData.value = basketItem
+        NavigationLiveData.selectedMenuItemInBasketLiveData.value = basketItem
     }
 
     fun weightOrVolume(scalar: String): String{

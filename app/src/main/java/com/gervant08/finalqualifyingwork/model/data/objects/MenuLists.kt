@@ -1,4 +1,4 @@
-package com.gervant08.finalqualifyingwork.model.data
+package com.gervant08.finalqualifyingwork.model.data.objects
 
 import com.gervant08.finalqualifyingwork.R
 

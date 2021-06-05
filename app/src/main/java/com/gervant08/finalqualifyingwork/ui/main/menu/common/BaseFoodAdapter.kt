@@ -5,13 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.IdRes
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.MenuCategory
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuCategory
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
 
 
 abstract class BaseFoodAdapter<T : Any>(val listener: OnItemClickListener<T>) :

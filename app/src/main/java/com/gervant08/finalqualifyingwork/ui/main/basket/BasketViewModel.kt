@@ -1,9 +1,8 @@
 package com.gervant08.finalqualifyingwork.ui.main.basket
 
 import androidx.lifecycle.ViewModel
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
-import com.gervant08.finalqualifyingwork.model.data.MenuBasket
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuBasket
 
 class BasketViewModel: ViewModel() {
 

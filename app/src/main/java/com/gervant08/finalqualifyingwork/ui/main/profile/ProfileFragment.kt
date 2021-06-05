@@ -6,10 +6,9 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.User
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.User
 import com.gervant08.finalqualifyingwork.model.tools.FireBaseAuthentication
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DataSnapshot

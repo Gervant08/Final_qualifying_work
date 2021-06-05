@@ -5,43 +5,39 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.BasketItem
-import com.gervant08.finalqualifyingwork.model.data.MenuCategory
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
-import com.gervant08.finalqualifyingwork.model.data.NavigateLiveData
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.BasketItem
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuCategory
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.objects.NavigationLiveData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var bottomNavigationView: BottomNavigationView
     private val viewModel: MainViewModel by viewModels()
     private lateinit var navHostFragment: NavHostFragment
-
-    companion object {
-        const val ITEM_HOME = "Home"
-        const val ITEM_BASKET = "Basket"
-        const val ITEM_PROFILE = "Profile"
-    }
+    private lateinit var  itemMenu : String
+    private lateinit var  itemBasket: String
+    private lateinit var  itemProfile: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        NavigateLiveData.selectedCategoryLiveData.observe(
+        NavigationLiveData.selectedCategoryLiveData.observe(
             this, this::onMenuCategorySelected
         )
-        NavigateLiveData.selectedMenuItemLiveData.observe(
+        NavigationLiveData.selectedMenuItemLiveData.observe(
             this, this::onMenuItemSelected
         )
 
-        NavigateLiveData.selectedMenuItemInBasketLiveData.observe(
+        NavigationLiveData.selectedMenuItemInBasketLiveData.observe(
             this, this::onMenuItemAddedInBasket
         )
 
-        NavigateLiveData.filledBasketLiveData.observe(
+        NavigationLiveData.filledBasketLiveData.observe(
             this, this::onBasketFilled)
 
-        NavigateLiveData.madeOrderLiveData.observe(
+        NavigationLiveData.madeOrderLiveData.observe(
             this, this::onOrderMade
         )
 
@@ -51,7 +47,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         navHostFragment =
             childFragmentManager.findFragmentById(R.id.main_screen_nav_host) as NavHostFragment
         bottomNavigationView = view.findViewById(R.id.main_bottom_navigation)
+        itemMenu = getString(R.string.nav_menu_home)
+        itemBasket = getString(R.string.nav_menu_basket)
+        itemProfile = getString(R.string.nav_menu_profile)
         setUpBottomNavigation(navHostFragment)
+
     }
 
     private fun setUpBottomNavigation(navHostFragment: NavHostFragment) {
@@ -59,9 +59,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             let { NavigationUI.setupWithNavController(it, navHostFragment.navController) }
             setOnNavigationItemSelectedListener { item ->
                 when (item.title) {
-                    ITEM_HOME -> navHostFragment.navController.navigate(R.id.menu_fragment)
-                    ITEM_BASKET -> navHostFragment.navController.navigate(R.id.basket_fragment)
-                    ITEM_PROFILE -> navHostFragment.navController.navigate(R.id.profile_fragment)
+                    itemMenu -> navHostFragment.navController.navigate(R.id.menu_fragment)
+                    itemBasket -> navHostFragment.navController.navigate(R.id.basket_fragment)
+                    itemProfile -> navHostFragment.navController.navigate(R.id.profile_fragment)
                 }
                 return@setOnNavigationItemSelectedListener true
             }

@@ -16,10 +16,10 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
         super.onViewCreated(view, savedInstanceState)
 
         authViewPager = view.findViewById(R.id.viewpager)
-        authViewPager.adapter = initAdapter()
+        authViewPager.adapter = initPagerAdapter()
     }
 
-    private fun initAdapter(): FragmentStateAdapter = AuthFragmentPagerAdapter(
+    private fun initPagerAdapter(): FragmentStateAdapter = AuthPagerAdapter(
             authViewModel.initFragmentList(),
             requireActivity().supportFragmentManager,
             lifecycle

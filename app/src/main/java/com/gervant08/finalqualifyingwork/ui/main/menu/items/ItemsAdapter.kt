@@ -1,7 +1,7 @@
 package com.gervant08.finalqualifyingwork.ui.main.menu.items
 
 import com.gervant08.finalqualifyingwork.R
-import com.gervant08.finalqualifyingwork.model.data.MenuItem
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.MenuItem
 import com.gervant08.finalqualifyingwork.ui.main.menu.common.BaseFoodAdapter
 
 class ItemsAdapter(listener: OnItemClickListener<MenuItem>): BaseFoodAdapter<MenuItem>(listener = listener) {
