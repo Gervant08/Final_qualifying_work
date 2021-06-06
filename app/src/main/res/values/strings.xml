@@ -8,7 +8,7 @@
     <string name="registration_page_name">имя</string>
     <string name="registration_page_last_name">фамилия</string>
     <string name="registration_page_mail">почта</string>
-    <string name="registration_page_create_password">придумайте пароль</string>
+    <string name="registration_page_create_password">придумайте пароль (от 8-ми символов)</string>
     <string name="registration_page_button_registration">ЗАРЕГИСТРИРОВАТЬСЯ</string>
     <string name="basket_order_button_order_text">Заказать</string>
     <string name="basket_order_button_order_text_2">Оформить заказ</string>

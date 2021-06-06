@@ -14,11 +14,11 @@ class RootActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.app_nav_host) as NavHostFragment
-        NavigationLiveData.loggedUserLiveData.observe(this, this::goToMainScreen)
+        NavigationLiveData.loggedUserLiveData.observe(this, this::onUserLogged)
 
     }
 
-    private fun goToMainScreen(isLogged: Boolean) {
+    private fun onUserLogged(isLogged: Boolean) {
         if (isLogged)
             navHostFragment.navController.navigate(R.id.main_fragment)
 
