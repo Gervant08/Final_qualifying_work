@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
 import com.gervant08.finalqualifyingwork.R
+import com.gervant08.finalqualifyingwork.model.data.dataclasses.Order
+import com.gervant08.finalqualifyingwork.model.data.objects.MenuBasket
 import com.gervant08.finalqualifyingwork.model.tools.OrderNotification
 import java.text.SimpleDateFormat
 import java.util.*
@@ -124,6 +126,14 @@ class OrderFragment : Fragment(R.layout.fragment_basket_order) {
     private fun makeOrder() {
         createDialog(viewModel.createTextForDialogFragment(isOrderReadyToCreated()))
         createOrderNotification()
+        MenuBasket.dishesList.value!!.clear()
+
+        //Since there is no server, there is no logic to send the order to the server.
+        // In the future, if it appears, you can transform this object and work with it
+        val order = Order(peopleCount = basketOrderHumanCount.text.toString(),
+            selectedTable = basketOrderTable.text.toString(),
+            visitTime = orderTime,
+            orderAmount = basketOrderSum.text.toString())
     }
 
     private fun createDialog(titleAndText: Pair<String, String>) {
