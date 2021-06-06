@@ -42,9 +42,8 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
     }
 
     private fun goToOrderPage() {
-        if (MenuBasket.dishesList.value!!.size > 0){
-            NavigationLiveData.filledBasketLiveData.value = true
-        }
+       if (viewModel.basketIsNotEmpty())
+           NavigationLiveData.filledBasketLiveData.value = true
     }
 
     private fun deleteItemFromBasket(basketItem: BasketItem){
