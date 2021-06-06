@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src='@drawable/image_category_meat_dishes' />
+        tools:src='@drawable/image_category_nonalcoholic_beverages' />
 
     <TextView
         android:id="@+id/category_title"
@@ -32,6 +32,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/category_image"
         app:layout_constraintStart_toStartOf="@+id/category_image"
         app:layout_constraintTop_toTopOf="@+id/category_image"
-        tools:text="Безалкогольные блюда" />
+        tools:text="Безалкогольные напитки" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
